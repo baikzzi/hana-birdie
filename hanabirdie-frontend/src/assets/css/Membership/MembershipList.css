@@ -1,0 +1,268 @@
+.vip-membership-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.vip-membership-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+.vip-swiper {
+  height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+.vip-swiper-slide {
+  background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 395px;
+  height: auto;
+}
+
+.vip-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.vip-club-name {
+  font-size: 40px !important;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center !important;
+  margin-bottom: 100px;
+  color: inherit;
+  margin-bottom: 10px;
+  padding-top: 80px;
+}
+
+.vip-info {
+  font-size: 18px !important;
+  margin-left: 80px !important;
+  margin-bottom: 5px;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+.vip-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 160px;
+  height: 45px;
+  padding: 0 5px;
+  font-size: 16px;
+  margin: 5px 30px 0px 0;
+  background-color: white;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+}
+
+.vip-button:hover {
+  background-color: #27a596;
+}
+
+.vip-button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.vip-expired-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: -5px;
+  font-size: 16px;
+  animation: blinkRed 1.5s step-start infinite;
+  text-align: center;
+  position: relative;
+  right: 10%;
+}
+
+.vip-expired-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.vip-membership-item {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  overflow: hidden;
+}
+
+.vip-membership-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333333;
+}
+
+.vip-no-memberships {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #777;
+}
+
+.vip-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.vip-expiration-warning {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff0000 !important;
+  text-align: center;
+}
+
+@keyframes blinkRed {
+  0% {
+    color: #ff0000;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: #ff0000;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-period-button {
+  background-color: #f5f5f5;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-period-button.selected {
+  background-color: #00bdbd;
+}
+
+.modal-period-button:hover {
+  background-color: #e7e7e7;
+}
+
+.modal-confirm-button {
+  background-color: #008485;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-confirm-button:hover {
+  background-color: #007676;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: none;
+  color: #333;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.modal-close-button:hover {
+  color: #008485;
+}
+
+/* 아이콘 스타일 수정 */
+.vip-button .material-symbols-outlined {
+  font-size: 20px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.vip-button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.vip-button .membership-list-refund-button {
+  margin-left: 8px;
+}
