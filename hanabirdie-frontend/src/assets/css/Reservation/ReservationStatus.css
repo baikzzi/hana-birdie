@@ -1,0 +1,113 @@
+.custom-calendar-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.custom-calendar-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-text {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 15px;
+  user-select: none;
+}
+
+.custom-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.custom-calendar-day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; /* 모든 내용을 왼쪽으로 정렬 */
+  height: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.custom-day-top {
+  font-weight: bold;
+  margin-bottom: 5px;
+  justify-content: flex-start; /* 위쪽 정렬 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.custom-weather-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.custom-weather-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.custom-temperature {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.custom-available-slots {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.custom-day.prev-month,
+.custom-day.next-month {
+  background-color: #e0e0e0;
+  color: #bbb;
+  cursor: default;
+}
+
+.custom-day:hover {
+  background-color: #e0e0e0;
+}
+
+.custom-day.selected {
+  background-color: #97d1c7;
+  color: white;
+  border: 2px solid black;
+}
+
+.custom-week-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.custom-week-day {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+}

@@ -1,0 +1,447 @@
+.reservation-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  /* background-color: #???; 적용 필요 */
+}
+
+.reservation-wrap h2 {
+  text-align: center;
+  padding-bottom: 10px; /* 구분선과 텍스트 사이의 간격 */
+  margin-bottom: 20px; /* 다른 요소와의 간격 */
+}
+.reservation-wrap h2::before {
+  content: "<"; /* 앞에 붙일 텍스트 */
+  margin-right: 8px; /* 텍스트와의 간격 */
+}
+
+.reservation-wrap h2::after {
+  content: ">"; /* 뒤에 붙일 텍스트 */
+  margin-left: 8px; /* 텍스트와의 간격 */
+}
+
+.reservation-wrap h3 {
+  position: relative;
+  padding-bottom: 10px; /* 구분선과 텍스트 사이의 간격 */
+  margin-bottom: 20px; /* 다른 요소와의 간격 */
+  color: #3f8b7f;
+}
+
+.reservation-wrap h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* 구분선의 높이 */
+  background-color: #ccc; /* 구분선의 색상 */
+}
+
+/* 1. 예약 구분 */
+.user-type-selection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-type-selection button {
+  background-color: #f9f9f9; /* 선택 가능 색상 */
+  color: black;
+  border: 1px solid black;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  /* transition: background-color 0.3s ease; */
+}
+
+.user-type-selection button:hover {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+}
+
+.user-type-selection button.active,
+button.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+/* 2. 일자 선택 - 달력 및 선택 상태 */
+.calendar-legend {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.color-box {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 5px;
+  border: 0.5px solid #000;
+  border-radius: 2px;
+}
+
+/* 달력 스타일 */
+.calendar-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 15px;
+  user-select: none;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.month-selector {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 300px;
+  padding: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.month-selector .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.month-selector h5 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.select-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+.option {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9; /* 선택 가능 색상 */
+  border: 1px solid black;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+}
+
+.option.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black; /* 적용 안됨 */
+  font-weight: bold;
+}
+
+.calendar-day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px; /* 버튼 높이를 적절히 설정하세요 */
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.day-top {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-weight: bold;
+}
+
+.day-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0 5px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.weather-icon {
+  width: 50px; /* 아이콘 크기를 조정하세요 */
+  height: 50px;
+}
+
+.temperature {
+  font-size: 12px;
+  color: #555;
+  text-align: right;
+}
+
+.day.prev-month,
+.day.next-month {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+  color: #bbb;
+  cursor: default;
+}
+
+.day:hover {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+}
+
+.day.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black;
+}
+
+/* 주간 리스트 스타일 */
+.week-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.week-day {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 티타임, 티오프 시간, 코스, 캐디, 카트, 보험 선택 */
+.hidden-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.hidden-button-tee-off {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(80px, 1fr)
+  ); /* 각 버튼이 최소 100px을 차지하고, 가능할 경우 그리드가 자동으로 채워짐 */
+  gap: 5px;
+  justify-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.hidden-button .time {
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #f9f9f9; /* 선택 가능 색상 */
+  color: black;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hidden-button .time:hover {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+}
+
+.hidden-button .time.active,
+.hidden-button .time.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+/* 예약하기 버튼 스타일 */
+.booking-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.booking-button > button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f9f9f9; /* 선택 가능 색상 */
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-button > button:hover,
+.booking-button > button:focus {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+  outline: none;
+}
+
+.booking-button > button.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+/* 로딩 시 표시 */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.day-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 5px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.weather-icon {
+  width: 50px; /* 아이콘 크기를 조정하세요 */
+  height: 50px;
+}
+
+.temperature {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+}
+
+.weather-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px; /* 날씨와 빈자리 사이 간격 */
+}
+
+.available-slots {
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* 기존의 스타일 유지 */
+.day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px; /* 버튼 높이를 적절히 설정하세요 */
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.day-top {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-weight: bold;
+}
+
+.hidden-button-tee-off .course-name {
+  grid-column: 1 / -1; /* 전체 그리드 열을 차지하게 설정 */
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hidden-button-tee-off .course-separator {
+  grid-column: 1 / -1; /* 전체 그리드 열을 차지하게 설정 */
+  border-bottom: 2px solid #ccc;
+  margin: 20px 0; /* 구분선 위아래 여백 */
+  width: 100%; /* 구분선의 너비를 100%로 설정하여 화면 전체를 채우도록 함 */
+}
+
+.hidden-button .time {
+  padding: 10px 20px; /* 버튼 크기를 좀 더 키움 */
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: #f9f9f9; /* 선택 가능 색상 */
+  color: black;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap; /* 텍스트가 버튼 내에서 줄 바꿈되지 않도록 함 */
+}
+
+.hidden-button .time:hover {
+  background-color: #e0e0e0; /* 선택 불가 색상 */
+}
+
+.hidden-button .time.active,
+.hidden-button .time.selected {
+  background-color: #97d1c7; /* 선택됨 색상 */
+  color: white;
+  border: 2px solid black;
+  font-weight: bold;
+}
+.time.disabled {
+  background-color: #e0e0e0; /* 예약 불가능한 시간의 배경색 */
+  color: #a0a0a0;
+  cursor: not-allowed;
+  border: 1px solid #ccc;
+}

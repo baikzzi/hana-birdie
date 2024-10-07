@@ -1,0 +1,263 @@
+.summary-info {
+  background-color: #f9f9f9; /* 밝은 배경색 */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 가벼운 그림자 */
+}
+
+.summary-info h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.summary-info p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.summary-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.summary-info li {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.summary-info li::before {
+  content: "•";
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.custom-calendar-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.custom-calendar {
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-calendar-img-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.custom-calendar-img {
+  width: 30px;
+  height: 30px;
+  padding-right: 5px;
+}
+
+.custom-calendar-legend-item {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.custom-calendar-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.custom-text {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 15px;
+  user-select: none;
+}
+
+.custom-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.custom-calendar-day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.custom-day.prev-month,
+.custom-day.next-month {
+  background-color: #e0e0e0;
+  color: #bbb;
+  cursor: default;
+}
+
+.custom-day:hover {
+  background-color: #e0e0e0;
+}
+
+.custom-day.selected {
+  background-color: #97d1c7;
+  color: white;
+  border: 2px solid black;
+}
+
+.custom-week-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.custom-week-day {
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 날짜 스타일 */
+.date-number {
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 예약 이미지 및 카운트 스타일 */
+.reservation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation-image {
+  width: 40px;
+  height: 40px;
+}
+
+.reservation-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+/* 모달 오버레이 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 모달 창 */
+.modal {
+  background: white;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001;
+  text-align: center;
+}
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.modal p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.modal-table-label {
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+}
+
+.modal-table-value {
+  text-align: right;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.ReservationHistory-modal-close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.reservation-modal-cancel-button {
+  background-color: #008485;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #008485;
+  font-size: 14px;
+}
