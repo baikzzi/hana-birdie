@@ -1,0 +1,46 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    gcp:
+      credentials:
+        location: ${GOOGLE_APPLICATION_CREDENTIALS} # 환경 변수를 통해 자격 증명 파일 경로 지정
+
+  # 자율운영 데이터베이스 - 고정ip 할당 불가
+#  datasource:
+#    url: jdbc:oracle:thin:@finalprojectclouddb_high?TNS_ADMIN=/Users/baikzzi/Wallet_finalProjectCloudDB # 맥 환경
+#    url: jdbc:oracle:thin:@finalprojectclouddb_high?TNS_ADMIN=C:/SQLDEV/Wallet_finalProjectCloudDB # 집 윈도우
+#    url: jdbc:oracle:thin:@(description=(retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gf62a2afd94f167_finalprojectclouddb_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+#    driver-class-name: oracle.jdbc.OracleDriver
+#    username: ADMIN
+#    password: Qorwlghks10715!
+
+# 오라클 클라우드 인스턴스에 띄운 도커 db
+#  datasource:
+#    url: jdbc:oracle:thin:@144.24.75.253:1521:xe
+#    driver-class-name: oracle.jdbc.OracleDriver
+#    username: developer
+#    password: Qorwl20218!
+
+  # GCP 인스턴스에 띄운 도커 db#  datasource:
+  datasource:
+      url: jdbc:oracle:thin:@34.22.96.77:1521:xe
+      driver-class-name: oracle.jdbc.OracleDriver
+      username: developer
+      password: Qorwl20218!
+
+jpa:
+  hibernate:
+    ddl-auto: create
+  properties:
+    hibernate:
+      format_sql: true
+
+mybatis:
+  mapper-locations: classpath:hanabirdiemapper/*.xml
+
+logging:
+  level:
+    org.springframework: INFO
+    org.mybatis: INFO

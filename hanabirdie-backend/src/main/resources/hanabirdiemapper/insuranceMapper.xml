@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.insurance.mapper.InsuranceMapper">
+    <select id="getInsuranceList" resultType="com.kopo.hanabirdie.domain.insurance.dto.InsuranceListResponse">
+        SELECT
+            INSURANCE_ID as insuranceId,
+            INSURANCE_NAME as insuranceName,
+            CREATED_DATE as createdDate,
+            PRICE as price,
+            COVERAGE as coverage,
+            TAG as tag
+        FROM
+            INSURANCE_PRODUCT
+        ORDER BY
+            CREATED_DATE
+    </select>
+
+    <select id="getInsuranceDetail" parameterType="com.kopo.hanabirdie.domain.insurance.dto.InsuranceDetailRequest" resultType="com.kopo.hanabirdie.domain.insurance.dto.InsuranceDetailResponse">
+        SELECT
+            INSURANCE_ID as insuranceId,
+            INSURANCE_NAME as insuranceName,
+            CREATED_DATE as createdDate,
+            PRICE as price,
+            COVERAGE as coverage,
+            TAG as tag
+        FROM
+            INSURANCE_PRODUCT
+        WHERE
+            INSURANCE_ID = #{insuranceId}
+        </select>
+
+    <insert id="subscribeInsurance" parameterType="com.kopo.hanabirdie.domain.insurance.dto.InsuranceSubscribeRequest">
+        INSERT INTO INSURANCE_APPLICATION
+        (
+            APPLICATION_ID,
+            USER_ID,
+            INSURANCE_ID,
+            APPLICATION_DATE,
+            PRICE,
+            START_DATE,
+            EXPIRE_DATE
+        )
+        VALUES
+            (
+                'IA_' || LPAD(insurance_application_seq.NEXTVAL, 5, '0'),
+                #{userId},
+                #{insuranceId},
+                SYSDATE,
+                #{price},
+                #{startDate},
+                #{expireDate}
+            )
+    </insert>
+
+
+    <select id="getInsuranceMyList" resultType="com.kopo.hanabirdie.domain.insurance.dto.InsuranceMyListResponse">
+        SELECT
+            ia.insurance_id as insuranceId,
+            ia.application_date as applicationDate,
+            ia.price as price,
+            ia.start_date as startDate,
+            ia.expire_date as expireDate,
+            ip.insurance_name as insuranceName
+        FROM
+            INSURANCE_APPLICATION ia
+                JOIN
+            INSURANCE_PRODUCT ip
+            ON
+                ia.insurance_id = ip.insurance_id
+        WHERE
+            ia.user_id = #{userId}
+    </select>
+</mapper>

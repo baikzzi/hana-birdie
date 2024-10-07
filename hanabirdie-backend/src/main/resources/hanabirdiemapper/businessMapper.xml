@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.business.mapper.BusinessMapper">
+    <select id="getStatistics" resultType="com.kopo.hanabirdie.domain.business.dto.BusinessStatisticsResponse">
+        SELECT
+            TO_CHAR(transaction_date, 'YYYY-MM') AS month,
+            transaction_type AS transactionType,
+            SUM(amount) AS amount
+        FROM
+            transaction_history
+        WHERE
+            golf_course_id = 10002 AND
+            transaction_date >= TO_DATE('2014-01-01', 'YYYY-MM-DD') AND
+            transaction_date &lt; TO_DATE('2024-10-01', 'YYYY-MM-DD')
+        GROUP BY
+            TO_CHAR(transaction_date, 'YYYY-MM'),
+            transaction_type
+        ORDER BY
+            month,
+            transaction_type
+    </select>
+
+
+<!--    <insert id="registerCost">-->
+<!--        <foreach collection="list" item="item" separator="">-->
+<!--            INSERT INTO transaction_history-->
+<!--            (golf_course_id, transaction_id, transaction_date, transaction_type, transaction_category, description, amount)-->
+<!--            VALUES-->
+<!--            (100, 'TR_' || LPAD(transaction_history_seq.NEXTVAL, 7, '0'), TO_DATE(#{item.transactionDate}, 'YYYY-MM-DD'), #{item.transactionType}, #{item.transactionCategory}, #{item.description}, #{item.amount})-->
+<!--        </foreach>-->
+<!--    </insert>-->
+    <insert id="registerCost" parameterType="com.kopo.hanabirdie.domain.business.dto.RegisterCostRequest">
+        INSERT INTO transaction_history (
+        golf_course_id,
+        transaction_id,
+        transaction_date,
+        transaction_type,
+        transaction_category,
+        description,
+        amount
+        )
+        SELECT
+        10002,
+        'TR_' || LPAD(transaction_history_seq.NEXTVAL, 7, '0'),
+        TO_DATE(A.transactionDate, 'RRRR-MM-DD'),
+        A.transactionType,
+        A.transactionCategory,
+        A.description,
+        A.amount
+        FROM (
+        <foreach item="item" collection="list" separator=" UNION ALL ">
+            SELECT
+            #{item.transactionDate} AS transactionDate,
+            #{item.transactionType} AS transactionType,
+            #{item.transactionCategory} AS transactionCategory,
+            #{item.description} AS description,
+            #{item.amount} AS amount
+            FROM dual
+        </foreach>
+        ) A
+    </insert>
+
+    <select id="getDateTransactionHistory" resultType="com.kopo.hanabirdie.domain.business.dto.DateTransactionHistoryResponse">
+        SELECT
+            transaction_id as transactionId,
+            transaction_date as transactionDate,
+            transaction_type as transactionType,
+            transaction_category as transactionCategory,
+            description,
+            amount
+        FROM
+            transaction_history
+        WHERE
+            golf_course_id = 10002
+        AND TRUNC(transaction_date) = TO_DATE(#{transactionDate}, 'RRRR-MM-DD')
+    </select>
+
+    <delete id="deleteTransaction" parameterType="com.kopo.hanabirdie.domain.business.dto.TransactionDeleteRequest">
+        DELETE FROM transaction_history
+        WHERE transaction_id = #{transactionId}
+    </delete>
+
+    <update id="editTransaction" parameterType="java.util.List">
+        <foreach collection="transactions" index="index" item="item" open="DECLARE BEGIN" separator=";" close="; END;">
+            UPDATE transaction_history
+            SET
+            transaction_date = #{item.transactionDate},
+            transaction_type = #{item.transactionType},
+            transaction_category = #{item.transactionCategory},
+            description = #{item.description},
+            amount = #{item.amount}
+            WHERE
+            transaction_id = #{item.transactionId}
+        </foreach>
+    </update>
+
+    <select id="getDailyTransaction" parameterType="com.kopo.hanabirdie.domain.business.dto.DailyTransactionRequest" resultType="com.kopo.hanabirdie.domain.business.dto.DailyTransactionResponse">
+        SELECT
+        TO_CHAR(transaction_date, 'YYYY-MM-DD') AS transactionDate,
+        transaction_type AS transactionType,
+        transaction_category AS transactionCategory,
+        description,
+        SUM(amount) AS amount
+        FROM
+        transaction_history
+        WHERE
+        golf_course_id = 10002  <!-- 특정 골프장 ID 필터링 -->
+        AND transaction_date &gt;= TO_DATE(#{startDate}, 'YYYY-MM-DD')  <!-- 시작 날짜 -->
+        AND transaction_date &lt;= TO_DATE(#{endDate}, 'YYYY-MM-DD')    <!-- 종료 날짜 -->
+        GROUP BY
+        TO_CHAR(transaction_date, 'YYYY-MM-DD'),
+        transaction_type,
+        transaction_category,
+        description
+        ORDER BY
+        transactionDate DESC,
+        transactionType,
+        transactionCategory,
+        description
+    </select>
+
+    <select id="getPastTransaction" resultType="com.kopo.hanabirdie.domain.business.dto.PastTransactionResponse">
+        SELECT
+            TO_CHAR(transaction_date, 'YYYY-MM') AS transactionDate,
+            transaction_type as transactionType,
+            transaction_category as transactionCategory,
+            description,
+            SUM(amount) AS amount
+        FROM
+            transaction_history
+        WHERE
+            golf_course_id = 10002  -- 특정 골프장 ID를 필터링
+          AND transaction_date BETWEEN TO_DATE('2023-10-01', 'YYYY-MM-DD') AND TO_DATE('2024-09-30', 'YYYY-MM-DD')
+        <!--&lt;!&ndash;            golf_course_id = #{golfCourseId}  &lt;!&ndash; 특정 골프장 ID를 매개변수로 받음 &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;            AND transaction_date BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD')&ndash;&gt;-->
+        <!--&lt;!&ndash;            AND TO_DATE(#{endDate}, 'YYYY-MM-DD')  &lt;!&ndash; 기간을 동적으로 받음 &ndash;&gt;&ndash;&gt;-->
+        GROUP BY
+            TO_CHAR(transaction_date, 'YYYY-MM'),
+            transaction_type,
+            transaction_category,
+            description
+        ORDER BY
+            transactionDate DESC,
+            transaction_type,
+            transaction_category,
+            description
+    </select>
+
+</mapper>

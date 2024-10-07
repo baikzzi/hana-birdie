@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.user.mapper.UserMapper">
+    <select id="login" resultType="com.kopo.hanabirdie.domain.user.dto.UserLoginResponse">
+        SELECT
+            user_id AS userId,
+            user_role AS userRole,
+            name AS name,
+            phone_num AS phoneNum,
+            email AS email,
+            user_status AS userStatus
+        FROM users
+        WHERE user_id = #{userId}
+          AND user_passwd = #{userPasswd}
+    </select>
+
+    <insert id="signUp">
+        INSERT INTO users (
+            user_id, user_passwd, name, phone_num, email, birth_date, gender, identify_num, carrier
+        ) VALUES (
+                     #{userId}, #{userPasswd}, #{name}, #{phoneNum}, #{email}, #{birthDate}, #{gender}, #{identifyNum}, #{carrier}
+                 )
+    </insert>
+</mapper>

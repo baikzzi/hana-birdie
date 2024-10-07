@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.reservation.mapper.ReservationMapper">
+    <select id="getInfo" resultType="com.kopo.hanabirdie.domain.reservation.dto.ReservationInfoResponse">
+        SELECT
+            gc.GOLF_COURSE_ID AS golfCourseId,
+            m.MEMBERSHIP_ID AS membershipId,
+            gc.GOLF_COURSE_NAME AS golfCourseName,
+            gc.HOLE_COUNT AS holeCount,
+            m.WEEKDAY_MEMBER AS weekdayMember,
+            m.WEEKEND_MEMBER AS weekendMember,
+            m.CADDY_FEE_NUM AS caddyFeeNum,
+            m.CART_FEE_NUM AS cartFeeNum,
+            m.LOCATION AS location,
+            m.LOCATION_ENG AS locationEng,
+            gc.NIGHT_ROUND AS nightRound
+        FROM
+            GOLF_COURSE gc
+                JOIN
+            MEMBERSHIP m ON gc.GOLF_COURSE_ID = m.GOLF_COURSE_ID
+        WHERE
+            gc.GOLF_COURSE_ID = #{golfCourseId}
+          AND
+            ROWNUM = 1
+    </select>
+
+    <select id="getAvailableDate" resultType="com.kopo.hanabirdie.domain.reservation.dto.ReservationAvailableDateResponse">
+        WITH TotalSlots AS (
+            SELECT
+                GOLF_COURSE_ID,
+                (18 * 4) * (HOLE_COUNT / 9) * (CASE NIGHT_ROUND WHEN 'Y' THEN 3 ELSE 2 END) AS total_slots
+            FROM
+                GOLF_COURSE
+            WHERE
+                GOLF_COURSE_ID = #{golfCourseId}
+        ),
+             DateRange AS (
+                 SELECT
+                     SYSDATE + LEVEL AS reservation_date
+                 FROM
+                     DUAL
+        CONNECT BY
+            LEVEL <![CDATA[<=]]> 28
+            ),
+            ReservedSlots AS (
+        SELECT
+            d.reservation_date,
+            COALESCE(SUM(CASE
+            WHEN r.RESERVATION_TYPE = 'GROUP' THEN 4
+            WHEN r.RESERVATION_TYPE = 'INDIV' THEN 1
+            ELSE 0
+            END), 0) AS reserved_slots
+        FROM
+            DateRange d
+            LEFT JOIN
+            RESERVATION r
+        ON
+            TRUNC(r.RESERVATION_DATE) = TRUNC(d.reservation_date)
+            AND r.GOLF_COURSE_ID = #{golfCourseId}
+            AND r.STATUS = 'CONFIRMED'
+        GROUP BY
+            d.reservation_date
+            )
+        SELECT
+            r.reservation_date as reservationDate,
+            ts.total_slots - r.reserved_slots AS availableSlots
+        FROM
+            ReservedSlots r
+                JOIN
+            TotalSlots ts
+            ON
+                ts.GOLF_COURSE_ID = #{golfCourseId}
+        ORDER BY
+            r.reservation_date
+    </select>
+
+    <select id="getAvailableTime" resultType="com.kopo.hanabirdie.domain.reservation.dto.ReservationAvailableTimeResponse">
+        SELECT
+            tee_off_time as teeOffTime,
+            tee_time as teeTime,
+            course_type as courseType,
+            reservation_type as reservationType
+        FROM reservation
+        WHERE golf_course_id = #{golfCourseId}
+          AND TO_CHAR(reservation_Date, 'YYYY-MM-DD') = #{reservationDate}--'2024-09-06'
+        ORDER BY tee_time, course_type, tee_off_time, reservation_type
+    </select>
+
+    <insert id="createReservation" parameterType="com.kopo.hanabirdie.domain.reservation.dto.ReservationCreateRequest">
+        INSERT INTO reservation (
+            reservation_num,
+            user_id,
+            golf_course_id,
+            created_date_time,
+            reservation_date,
+            tee_off_time,
+            reservation_type,
+            tee_time,
+            course_type,
+            caddy_yn,
+            cart_yn,
+            daily_insurance_yn
+        ) VALUES (
+                     'RS_' || LPAD(reservation_seq.NEXTVAL, 5, '0'),
+                     #{userId},
+                     #{golfCourseId},
+                     SYSDATE,
+                     #{reservationDate},
+                     #{teeOffTime},
+                     #{reservationType},
+                     #{teeTime},
+                     #{courseType},
+                     #{caddyYn},
+                     #{cartYn},
+                     #{dailyInsuranceYn}
+                 )
+    </insert>
+
+    <select id="getReservationStatus" resultType="com.kopo.hanabirdie.domain.reservation.dto.ReservationStatusResponse">
+        SELECT
+            R.RESERVATION_NUM AS reservationNum,
+            R.GOLF_COURSE_ID AS golfCourseId,
+            H.MEMBERSHIP_ID AS membershipId,
+            GC.GOLF_COURSE_NAME AS golfCourseName,
+            R.CREATED_DATE_TIME AS createdDateTime,
+            R.RESERVATION_DATE AS reservationDate,
+            R.TEE_OFF_TIME AS teeOffTime,
+            R.RESERVATION_TYPE AS reservationType,
+            R.TEE_TIME AS teeTime,
+            R.COURSE_TYPE AS courseType,
+            R.CADDY_YN AS caddyYn,
+            R.CART_YN AS cartYn,
+            R.STATUS AS status,
+            R.DAILY_INSURANCE_YN AS dailyInsuranceYn
+        FROM
+            RESERVATION R
+                LEFT JOIN
+            HELD_MEMBERSHIP H ON R.USER_ID = H.USER_ID AND R.GOLF_COURSE_ID = H.GOLF_COURSE_ID
+                LEFT JOIN
+            GOLF_COURSE GC ON R.GOLF_COURSE_ID = GC.GOLF_COURSE_ID
+        WHERE
+            R.USER_ID = #{userId}
+    </select>
+
+    <update id="cancelReservation" parameterType="com.kopo.hanabirdie.domain.reservation.dto.ReservationCancelRequest">
+        UPDATE reservation
+        SET status = 'CANCELLED'
+        WHERE reservation_num = #{reservationNum}
+    </update>
+</mapper>

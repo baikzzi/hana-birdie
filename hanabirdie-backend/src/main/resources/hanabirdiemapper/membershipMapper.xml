@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.membership.mapper.MembershipMapper">
+    <select id="getMembershipList" resultType="com.kopo.hanabirdie.domain.membership.dto.MembershipListResponse">
+        SELECT
+            gc.GOLF_COURSE_ID AS golfCourseId,
+            m.MEMBERSHIP_ID AS membershipId,
+            gc.GOLF_COURSE_NAME AS golfCourseName,
+            gc.ADDRESS AS address,
+            m.PRICE AS price
+        FROM
+            MEMBERSHIP m
+                JOIN
+            GOLF_COURSE gc ON m.GOLF_COURSE_ID = gc.GOLF_COURSE_ID
+        ORDER BY
+            gc.GOLF_COURSE_NAME
+    </select>
+
+    <select id="getMembershipDetail" parameterType="com.kopo.hanabirdie.domain.membership.dto.MembershipDetailRequest" resultType="com.kopo.hanabirdie.domain.membership.dto.MembershipDetailResponse">
+        SELECT
+            gc.GOLF_COURSE_ID AS golfCourseId,
+            m.MEMBERSHIP_ID AS membershipId,
+            gc.GOLF_COURSE_NAME AS golfCourseName,
+            gc.OPENING_DATE AS openingDate,
+            gc.ADDRESS AS address,
+            m.LOCATION AS location,
+            gc.HOLE_COUNT AS holeCount,
+            gc.MEMBER_COUNT AS memberCount,
+            m.PERSONAL AS personal,
+            m.CORPORATE AS corporate,
+            m.MEMBERSHIP_INTRO AS membershipIntro,
+            m.COURSE_INTRO AS courseIntro,
+            m.HISTORY AS history,
+            m.LOCATION_INFO AS locationInfo,
+            m.PRICE_TREND AS priceTrend,
+            m.FUTURE_OUTLOOK AS futureOutlook,
+            m.P_RECOMMENDED_CUSTOMERS AS pRecommendedCustomers,
+            m.P_COMPOSITION AS pComposition,
+            m.P_MEMBERSHIP_TYPE AS pMembershipType,
+            m.P_BOOKING AS pBooking,
+            m.P_JOINING_CONDITIONS AS pJoiningConditions,
+            m.P_REQUIRED_DOCUMENTS AS pRequiredDocuments,
+            m.P_FEATURES AS pFeatures,
+            m.C_RECOMMENDED_CUSTOMERS AS cRecommendedCustomers,
+            m.C_COMPOSITION AS cComposition,
+            m.C_MEMBERSHIP_TYPE AS cMembershipType,
+            m.C_BOOKING AS cBooking,
+            m.C_JOINING_CONDITIONS AS cJoiningConditions,
+            m.C_REQUIRED_DOCUMENTS AS cRequiredDocuments,
+            m.C_FEATURES AS cFeatures,
+            m.WEEKDAY_MEMBER AS weekdayMember,
+            m.WEEKEND_MEMBER AS weekendMember,
+            m.WEEKDAY_FAMILY AS weekdayFamily,
+            m.WEEKEND_FAMILY AS weekendFamily,
+            m.WEEKDAY_NON_MEMBER AS weekdayNonMember,
+            m.WEEKEND_NON_MEMBER AS weekendNonMember,
+            m.WEEKDAY_PRIME AS weekdayPrime,
+            m.WEEKEND_PRIME AS weekendPrime,
+            m.CADDY_FEE AS caddyFee,
+            m.CART_FEE AS cartFee
+        FROM
+            GOLF_COURSE gc
+                JOIN
+            MEMBERSHIP m ON gc.GOLF_COURSE_ID = m.GOLF_COURSE_ID
+        WHERE
+            gc.GOLF_COURSE_ID = #{golfCourseId} AND m.MEMBERSHIP_ID = #{membershipId}
+        </select>
+
+        <select id="getMembershipMyList" resultType="com.kopo.hanabirdie.domain.membership.dto.MembershipMyListResponse">
+            SELECT
+                h.GOLF_COURSE_ID as golfCourseId,
+                h.MEMBERSHIP_ID as membershipId,
+                g.GOLF_COURSE_NAME as golfCourseName,
+                h.FIRST_CONTRACT_DATE as firstContractDate,
+                h.LAST_CONTRACT_DATE as lastContractDate,
+                h.EXPIRATION_DATE as expirationDate
+            FROM
+                HELD_MEMBERSHIP h
+                    JOIN
+                GOLF_COURSE g
+                ON
+                    h.GOLF_COURSE_ID = g.GOLF_COURSE_ID
+            WHERE
+                h.USER_ID = #{userId}
+        </select>
+
+        <update id="renewalMembership" parameterType="com.kopo.hanabirdie.domain.membership.dto.MembershipRenewalRequest">
+            UPDATE held_membership
+            SET expiration_date = SYSDATE + (#{renewalPeriod} * 365),
+                last_contract_date = sysdate
+            WHERE
+                user_id = #{userId}
+                and golf_course_id = #{golfCourseId}
+                and membership_id = #{membershipId}
+
+        </update>
+</mapper>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.loan.mapper.LoanMapper">
+    <insert id="applyLoan" parameterType="com.kopo.hanabirdie.domain.loan.dto.LoanApplyRequest">
+        INSERT INTO LOAN_HISTORY (
+            loan_id,
+            user_id,
+            loan_product_id,
+            loan_amount,
+            loan_term,
+            interest_due_date,
+            loan_repayment_method,
+            loan_account_number,
+            interest_rate,
+            loan_application_date
+        ) VALUES
+              ('LN_' || LPAD(loan_history_seq.NEXTVAL, 5, '0'),
+              #{userId},
+              #{loanProductId},
+              #{loanAmount},
+              #{loanTerm},
+              #{interestDueDate},
+              #{loanRepaymentMethod},
+              #{loanAccountNumber},
+              #{interestRate},
+              SYSDATE
+        )
+    </insert>
+
+    <select id="lookupLoan" resultType="com.kopo.hanabirdie.domain.loan.dto.LookupLoanResponse">
+        SELECT
+            lh.loan_id AS loanId,
+            lh.user_id AS userId,
+            lh.loan_product_id AS loanProductId,
+            lp.loan_name AS loanName,
+            lh.loan_amount AS loanAmount,
+            lh.loan_term AS loanTerm,
+            lh.interest_due_date AS interestDueDate,
+            lh.loan_repayment_method AS loanRepaymentMethod,
+            lh.loan_account_number AS loanAccountNumber,
+            lh.interest_rate AS interestRate,
+            lh.loan_start_date AS loanStartDate,
+            lh.loan_expire_date AS loanExpireDate,
+            lh.loan_repayment_date AS loanRepaymentDate,
+            lh.loan_application_date AS loanApplicationDate,
+            lh.loan_status AS loanStatus
+        FROM
+            LOAN_HISTORY lh
+                JOIN
+            LOAN_PRODUCT lp ON lh.loan_product_id = lp.loan_product_id
+        WHERE
+            lh.user_id = #{userId}
+        ORDER BY
+            lh.loan_application_date DESC
+    </select>
+
+</mapper>

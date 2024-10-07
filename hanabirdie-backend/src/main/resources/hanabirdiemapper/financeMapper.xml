@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kopo.hanabirdie.domain.finance.mapper.FinanceMapper">
+
+    <insert id="uploadFinanceStatement" parameterType="java.util.Map">
+        <foreach collection="list" item="item" index="index"
+                 open="INSERT ALL " close="SELECT * FROM DUAL"
+                 separator=" " >
+            INTO FINANCIAL_STATEMENT (
+            golf_course_id,
+            report_year,
+            thstrm_num,
+            row_cnt,
+            account_nm,
+            thstrm_left,
+            thstrm_right,
+            frmtrm_left,
+            frmtrm_right
+            )  VALUES (
+            #{item.golfCourseId},
+            #{item.reportYear},
+            #{item.thstrmNum},
+            #{item.rowCnt},
+            #{item.accountNm},
+            #{item.thstrmLeft},
+            #{item.thstrmRight},
+            #{item.frmtrmLeft},
+            #{item.frmtrmRight}
+            )
+        </foreach>
+    </insert>
+
+    <select id="loadFinanceStatement" resultType="com.kopo.hanabirdie.domain.finance.dto.LoadFinanceStatementResponse">
+        select
+            report_year as reportYear,
+            thstrm_num as thstrmNum,
+            row_cnt as rowCnt,
+            account_nm as accountNm,
+            thstrm_left as thstrmLeft,
+            thstrm_right as thstrmRight,
+            frmtrm_left as frmtrmLeft,
+            frmtrm_right as frmtrmRight
+        from
+            financial_statement
+        where
+            golf_course_id = 10002
+        order by
+            report_year desc,
+            row_cnt
+    </select>
+
+<!--    <select id="financeAnalysis" parameterType="com.kopo.hanabirdie.domain.finance.dto.FinanceAnalysisRequest" resultType="com.kopo.hanabirdie.domain.finance.dto.FinanceAnalysisResponse">-->
+<!--        WITH income AS (-->
+<!--            SELECT-->
+<!--                SUM(CASE WHEN EXTRACT(YEAR FROM transaction_date) = #{reportYear} THEN amount ELSE 0 END) AS thstrmTotalIncome,-->
+<!--                SUM(CASE WHEN EXTRACT(YEAR FROM transaction_date) = #{reportYear} - 1 THEN amount ELSE 0 END) AS frmtrmTotalIncome-->
+<!--            FROM-->
+<!--                transaction_history-->
+<!--            WHERE-->
+<!--                transaction_type = '수입'-->
+<!--              AND EXTRACT(YEAR FROM transaction_date) IN (#{reportYear}, #{reportYear} -1)-->
+<!--              AND golf_course_id = #{golfCourseId}-->
+<!--        ),-->
+<!--             expense AS (-->
+<!--                 SELECT-->
+<!--                     SUM(CASE WHEN EXTRACT(YEAR FROM transaction_date) = #{reportYear} THEN amount ELSE 0 END) AS thstrmTotalExpense,-->
+<!--                     SUM(CASE WHEN EXTRACT(YEAR FROM transaction_date) = #{reportYear} - 1 THEN amount ELSE 0 END) AS frmtrmTotalExpense-->
+<!--                 FROM-->
+<!--                     transaction_history-->
+<!--                 WHERE-->
+<!--                     transaction_type = '지출'-->
+<!--                   AND EXTRACT(YEAR FROM transaction_date) IN (#{reportYear}, #{reportYear} -1)-->
+<!--                   AND golf_course_id = #{golfCourseId}-->
+<!--             ),-->
+<!--             fs AS (-->
+<!--                 SELECT-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmCurrentAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmCurrentAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmNonCurrentAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmNonCurrentAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%자산총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmTotalAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%자산총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmTotalAssets,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmCurrentLiabilities,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmCurrentLiabilities,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmNonCurrentLiabilities,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmNonCurrentLiabilities,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%부채총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmTotalLiabilities,-->
+<!--                     MAX(CASE WHEN ACCOUNT_NM LIKE '%부채총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmTotalLiabilities-->
+<!--                 FROM-->
+<!--                     financial_statement-->
+<!--                 WHERE-->
+<!--                     report_year = #{reportYear}-->
+<!--                   AND golf_course_id = #{golfCourseId}-->
+<!--             )-->
+<!--        SELECT-->
+<!--            fs.thstrmCurrentAssets,-->
+<!--            fs.frmtrmCurrentAssets,-->
+<!--            fs.thstrmNonCurrentAssets,-->
+<!--            fs.frmtrmNonCurrentAssets,-->
+<!--            fs.thstrmTotalAssets,-->
+<!--            fs.frmtrmTotalAssets,-->
+<!--            fs.thstrmCurrentLiabilities,-->
+<!--            fs.frmtrmCurrentLiabilities,-->
+<!--            fs.thstrmNonCurrentLiabilities,-->
+<!--            fs.frmtrmNonCurrentLiabilities,-->
+<!--            fs.thstrmTotalLiabilities,-->
+<!--            fs.frmtrmTotalLiabilities,-->
+<!--            income.thstrmTotalIncome AS thstrmTotalSales,-->
+<!--            income.frmtrmTotalIncome AS frmtrmTotalSales,-->
+<!--            expense.thstrmTotalExpense AS thstrmCostOfSales,-->
+<!--            expense.frmtrmTotalExpense AS frmtrmCostOfSales,-->
+<!--            (income.thstrmTotalIncome - expense.thstrmTotalExpense) AS thstrmNetIncome,-->
+<!--            (income.frmtrmTotalIncome - expense.frmtrmTotalExpense) AS frmtrmNetIncome-->
+<!--        FROM-->
+<!--            fs-->
+<!--                CROSS JOIN income-->
+<!--                CROSS JOIN expense-->
+<!--    </select>-->
+    <select id="financeAnalysis" parameterType="com.kopo.hanabirdie.domain.finance.dto.FinanceAnalysisRequest" resultType="com.kopo.hanabirdie.domain.finance.dto.FinanceAnalysisResponse">
+        WITH
+            current_year_metrics AS (
+                SELECT
+                    SUM(CASE WHEN transaction_type = '수입' THEN amount ELSE 0 END) AS thstrmTotalSales,
+                    SUM(CASE WHEN transaction_type = '지출' THEN amount ELSE 0 END) AS thstrmTotalExpense,
+                    SUM(CASE WHEN transaction_type = '지출' AND description IN ('식음료매출원가', '상품매출원가') THEN amount ELSE 0 END) AS thstrmCostOfSales
+                FROM
+                    transaction_history
+                WHERE
+                    golf_course_id = #{golfCourseId}
+                  AND EXTRACT(YEAR FROM transaction_date) = #{reportYear}
+            ),
+            previous_year_metrics AS (
+                SELECT
+                    SUM(CASE WHEN transaction_type = '수입' THEN amount ELSE 0 END) AS frmtrmTotalSales,
+                    SUM(CASE WHEN transaction_type = '지출' THEN amount ELSE 0 END) AS frmtrmTotalExpense,
+                    SUM(CASE WHEN transaction_type = '지출' AND description IN ('식음료매출원가', '상품매출원가') THEN amount ELSE 0 END) AS frmtrmCostOfSales
+                FROM
+                    transaction_history
+                WHERE
+                    golf_course_id = #{golfCourseId}
+                  AND EXTRACT(YEAR FROM transaction_date) = (#{reportYear} - 1)
+            ),
+            fs AS (
+                SELECT
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmCurrentAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmCurrentAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmNonCurrentAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동자산%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmNonCurrentAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%자산총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmTotalAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%자산총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmTotalAssets,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmCurrentLiabilities,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmCurrentLiabilities,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmNonCurrentLiabilities,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%비유동부채%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmNonCurrentLiabilities,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%부채총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(THSTRM_LEFT, THSTRM_RIGHT), ',', ''), '(', '-')) END) AS thstrmTotalLiabilities,
+                    MAX(CASE WHEN ACCOUNT_NM LIKE '%부채총계%' THEN TO_NUMBER(REPLACE(REPLACE(NVL(FRMTRM_LEFT, FRMTRM_RIGHT), ',', ''), '(', '-')) END) AS frmtrmTotalLiabilities
+                FROM
+                    financial_statement
+                WHERE
+                    report_year = #{reportYear}
+                  AND golf_course_id = #{golfCourseId}
+            )
+        SELECT
+            fs.thstrmCurrentAssets,
+            fs.frmtrmCurrentAssets,
+            fs.thstrmNonCurrentAssets,
+            fs.frmtrmNonCurrentAssets,
+            fs.thstrmTotalAssets,
+            fs.frmtrmTotalAssets,
+            fs.thstrmCurrentLiabilities,
+            fs.frmtrmCurrentLiabilities,
+            fs.thstrmNonCurrentLiabilities,
+            fs.frmtrmNonCurrentLiabilities,
+            fs.thstrmTotalLiabilities,
+            fs.frmtrmTotalLiabilities,
+            cy.thstrmTotalSales,
+            py.frmtrmTotalSales,
+            cy.thstrmCostOfSales,
+            py.frmtrmCostOfSales,
+            (cy.thstrmTotalSales - cy.thstrmTotalExpense) AS thstrmNetIncome,
+            (py.frmtrmTotalSales - py.frmtrmTotalExpense) AS frmtrmNetIncome
+        FROM
+            current_year_metrics cy,
+            previous_year_metrics py,
+            fs
+    </select>
+
+
+</mapper>
