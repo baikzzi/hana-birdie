@@ -1,0 +1,41 @@
+/* General form styling */
+.cost-management-page {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1100px;
+}
+.cost-management-header {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+/* Toggle 버튼 스타일 */
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+.toggle-button.active {
+  background-color: #008485;
+  color: white;
+  border-color: #008485;
+}
+
+.cost-management-content {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  min-height: 400px; /* 기본 크기를 확보 */
+  border-radius: 10px;
+}

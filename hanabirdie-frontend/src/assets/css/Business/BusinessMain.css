@@ -1,0 +1,40 @@
+.main-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.month-status-section {
+  margin-bottom: 20px;
+}
+
+/* Navigation Buttons Styling */
+.dashboard-navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.nav-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #000000;
+}
+
+.nav-button.active {
+  background-color: #008485; /* Active button background color */
+  color: white;
+}
+.nav-button:hover {
+  background-color: #27a596;
+}
+
+.sales-dashboard-slider-section {
+  width: 100%;
+}

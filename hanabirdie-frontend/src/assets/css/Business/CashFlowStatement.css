@@ -1,0 +1,217 @@
+.cash-flow-dashboard-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cash-flow-dashboard-top-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 40px;
+  padding: 24px 28px;
+  z-index: 1004;
+}
+
+.cash-flow-dashboard-segmented {
+  background-color: rgb(255, 255, 255);
+}
+
+.cash-flow-dashboard-segmented .ant-segmented-item-selected {
+  background-color: #008485;
+  color: white;
+}
+
+.cash-flow-dashboard-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+  gap: 12px;
+}
+
+.cash-flow-dashboard-title-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+  gap: 12px;
+}
+
+.cash-flow-dashboard-title {
+  margin: 0;
+  width: 74px;
+}
+
+.cash-flow-dashboard-divider {
+  margin: 0 12px;
+}
+
+.cash-flow-dashboard-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  width: 100%;
+}
+
+.cash-flow-dashboard-timeframe-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+  gap: 10px;
+}
+
+.cash-flow-dashboard-charts-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px; /* 차트 간격 줄이기 */
+  margin-top: 20px;
+}
+
+.cash-flow-dashboard-card {
+  width: 100%;
+  max-width: 270px; /* 차트 크기 유지 */
+  height: 300px;
+  overflow: hidden;
+  padding: 0px; /* 패딩 조정 */
+}
+
+.cash-flow-dashboard-card-title {
+  font-size: 14px; /* 제목 크기 줄임 */
+  font-weight: 500;
+}
+
+.cash-flow-dashboard-table-section {
+  margin-top: 20px;
+}
+
+.cash-flow-dashboard-tag {
+  margin-left: 10px;
+  padding: 2px 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.ant-row {
+  margin-bottom: 30px;
+}
+
+/* 현금 흐름 예측하기 버튼 스타일 */
+.cashflow-predict-button {
+  position: absolute; /* 고정된 위치 */
+  right: 0px; /* 화면 바깥으로 밀어내기 (조정 가능) */
+  top: 75%; /* 화면의 가운데 높이에 위치 */
+  transform: translateY(-50%); /* 수직 가운데 정렬 */
+  background-color: #008485 !important;
+  color: white !important;
+  border: none;
+  /* border-radius: 8px; */
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease; /* 호버 시 부드럽게 이동 */
+}
+
+.cashflow-predict-button:hover {
+  right: 10px; /* 호버 시 버튼이 화면 안으로 슬라이드 */
+  background-color: #27a596 !important;
+  transform: translateY(-50%) scale(1.1); /* 호버 시 버튼 확대 (줌 효과) */
+}
+
+/* CashFlowStatement.css */
+.predicted {
+  /* background-color: #008485 !important; 예측 데이터에 대한 배경색 */
+  position: relative; /* ::after를 위한 위치 지정 */
+}
+
+.predicted::after {
+  content: "(추정)"; /* (추정) 텍스트 추가 */
+  color: #00b6b6; /* 텍스트 색상 */
+  font-weight: bold; /* 텍스트 굵게 */
+  margin-left: 5px; /* 텍스트와 원래 내용 사이의 간격 */
+}
+
+.cashflow-predict-button.disabled {
+  background-color: #d9d9d9 !important;
+  color: #a3a3a3 !important;
+}
+
+.date-picker-container {
+  margin: 14px 0;
+}
+
+.fetch-data-button {
+  background-color: #008485 !important;
+}
+
+.fetch-data-button:hover {
+  background-color: #27a596 !important;
+}
+
+.ant-empty-image {
+  height: 165px !important;
+}
+
+.future-runway-dot {
+  stroke: #27a596 !important;
+  fill: #fff !important;
+}
+
+.past-runway-dot {
+  stroke: #ff0000 !important;
+  fill: #fff !important;
+}
+
+.breathing-text {
+  font-size: 16px; /* 글자 크기 */
+  color: #333; /* 기본 텍스트 색상 */
+  text-align: center; /* 가운데 정렬 */
+  animation: breathe 2s infinite, colorChange 2s infinite; /* 숨쉬는 애니메이션과 색상 변화 애니메이션 */
+  padding-top: 50px;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1); /* 기본 크기 */
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02); /* 약간 커짐 */
+  }
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    color: #333; /* 기본 색상 */
+  }
+  50% {
+    color: #00b6b6; /* 변화하는 색상 */
+  }
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.breathing-button {
+  animation: breathing 2s ease-in-out infinite;
+}

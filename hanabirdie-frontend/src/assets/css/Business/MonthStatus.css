@@ -1,0 +1,244 @@
+.dashboard-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboard-bs-top1 {
+  display: flex;
+  justify-content: space-between; /* 요소 간 간격 조정 */
+  gap: 20px; /* 요소 간의 간격을 설정 */
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.dashboard-top1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* 요소가 가능한 공간을 모두 차지하도록 설정 */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2rem 3rem var(--color-light-4);
+  color: var(--color-white);
+  min-width: 250px; /* 최소 너비 설정으로 반응형 유지 */
+}
+
+.dashboard-col-md-2 {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+}
+
+.dashboard-col-md-10 {
+  flex: 0 0 83.3333%;
+  max-width: 83.3333%;
+}
+
+/* Sidebar */
+aside {
+  background-color: var(--color-light);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Dashboard Main */
+.dashboard-main {
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+.dashboard-content {
+  margin-top: 5px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-header h2 {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--color-black-matt);
+  margin-bottom: 20px;
+}
+
+/* Month Selector */
+.dashboard-month-select {
+  border: 1px solid var(--color-light-3);
+  padding: 5px 12px;
+  border-radius: 5px;
+  background-color: var(--color-light);
+  font-size: 14px;
+  border: 1px solid #000000;
+}
+
+/* Top Info Boxes */
+.dashboard-bs-top1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.dashboard-top1 {
+  display: flex;
+  flex-direction: column;
+  width: 285px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2rem 3rem var(--color-light-4);
+  color: var(--color-white);
+}
+
+.dashboard-top1 h4 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--color-black-matt);
+}
+
+.dashboard-top1 p {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.dashboard-top1 h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-light-2);
+}
+
+.dashboard-green-bg {
+  background: linear-gradient(#bbded6, #61c0bf);
+}
+
+.dashboard-red-bg {
+  background: linear-gradient(#fae2c0, #fcb69f);
+}
+
+.dashboard-purple-bg {
+  background: linear-gradient(#c2e9fb, #a1c4fd);
+}
+
+/* Middle Section */
+.dashboard-middle1 {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.dashboard-middle1 h4 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.dashboard-product-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.dashboard-product-rank {
+  flex: 1;
+  background-color: var(--color-light);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2rem 3rem var(--color-light-3);
+  margin-right: 20px;
+}
+
+.dashboard-product-rank h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dashboard-date {
+  font-size: 14px;
+  color: var(--color-gray-1);
+  margin-top: 10px;
+}
+
+.dashboard-product-item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.dashboard-rank-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.rank-1 {
+  background-color: #f67280;
+}
+
+.rank-2 {
+  background-color: #ffb74d;
+}
+
+.rank-3 {
+  background-color: #81c784;
+}
+
+.dashboard-product-details h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.dashboard-product-details span {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.dashboard-product-details p {
+  font-size: 14px;
+  color: var(--color-gray-1);
+}
+
+.dashboard-pie-chart {
+  flex: 1;
+  background-color: var(--color-light);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2rem 3rem var(--color-light-3);
+}
+
+/* MonthStatus.css */
+
+/* 기존 스타일이 여기에 있을 것입니다 */
+
+/* 페이드 애니메이션 클래스 */
+.fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dashboard-top1.fade {
+  opacity: 0;
+}
+
+.dashboard-top1:not(.fade) {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
