@@ -1,0 +1,559 @@
+.finance-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-right: 0px;
+}
+
+.finance-row {
+  display: flex;
+}
+
+.finance-col-md-10 {
+  width: 83.3333%;
+}
+
+.finance-dashboard_main {
+  padding: 20px;
+}
+
+.finance-dashboard_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.finance-dashboard_header h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.finance-dashboard_header span {
+  color: #888;
+  font-size: 14px;
+}
+
+.finance-dashboard_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.finance-date_select {
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.finance-btn_1 {
+  background-color: #e0f7fa;
+  border: 2px solid #00796b;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00796b;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.finance-btn_1:hover {
+  background-color: #00796b;
+  color: #ffffff;
+}
+
+.FinanceMain-analysis-button {
+  background-color: #008485 !important;
+}
+
+.FinanceMain-analysis-button:hover {
+  background-color: #27a596 !important;
+}
+
+.finance-ratio-content-wrap {
+  display: flex;
+  justify-content: space-between; /* 자식 요소들 간의 간격을 일정하게 유지 */
+  gap: 20px; /* 자식 요소들 사이에 간격을 줌 */
+}
+
+.finance-ratio-content {
+  flex: 1; /* 자식 요소들이 가로 공간을 균등하게 채우도록 설정 */
+  min-width: 0; /* 내용이 넘치더라도 요소가 줄어들 수 있도록 설정 */
+}
+
+.finance-ratio-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+}
+
+.finance-ratio-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.finance-ratio-top-left {
+  display: flex;
+  align-items: center;
+}
+
+.finance-chart-icon {
+  font-family: "Material Icons Sharp";
+  font-size: 24px;
+  color: #00796b;
+  background-color: #e0f7fa;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.finance-ratio-top-right {
+  background-color: #ffffff;
+  border: 2px solid #e90061;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.finance-ratio-top-right:hover {
+  background-color: #e90061;
+  color: #ffffff;
+}
+
+.finance-ratio-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finance-ratio-bottom-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.finance-ratio-bottom-left-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.finance-ratio-bottom-left-top h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.finance-help-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #98d7c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.finance-help-icon:hover {
+  background-color: #82cbb0;
+}
+
+.finance-help-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.finance-help-icon:hover::after,
+.finance-help-icon:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.finance-help-icon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Tooltip 위에 나타나도록 */
+  left: 50%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.finance-ratio-bottom-left h5 {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.finance-ratio-bottom-left-bottom {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.finance-ratio-bottom-left p {
+  font-size: 12px;
+  color: #999;
+}
+
+.finance-ratio-bottom-right {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.finance-ratio-bottom-right svg {
+  width: 80px;
+  height: 80px;
+  transform: rotate(-90deg);
+}
+
+.finance-ratio-bottom-right circle {
+  fill: none;
+  stroke-width: 8;
+  stroke: #eeeeee;
+}
+
+#current_ratio {
+  stroke: #61c0bf;
+}
+
+#debt_ratio {
+  stroke: #fcb69f;
+}
+
+#total_asset_return {
+  stroke: #a1c4fd;
+}
+
+.finance-ratio-bottom-right-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-ratio-bottom-right-circle p {
+  margin: 0;
+}
+
+.finance-middle {
+  margin-top: 50px;
+}
+
+#financeChart {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 50px;
+}
+
+.finance-middle_boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.finance-middle_box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.finance-middle_icon {
+  width: 50px;
+  height: 50px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.finance-middle_icon span {
+  font-size: 24px;
+  color: #00796b;
+}
+
+.finance-middle_text h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.finance-middle_text p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+#salesDiff,
+#costOfSalesDiff,
+#netIncomeDiff {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.modal {
+  max-height: 500px;
+  max-width: 400px; /* 모달의 최대 너비 설정 */
+  position: relative; /* 부모 요소에 대해 중앙 정렬 */
+}
+
+.modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 화면 전체 높이에서 중앙 정렬 */
+  margin: 0 auto; /* 수평 중앙 정렬 */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: auto; /* 요소 크기에 맞추기 */
+  max-width: 400px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 자동 여백 설정 */
+}
+
+.modal-body img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.liquidity_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.liquidity_notice h4 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #555555;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.liquidity_notice p {
+  font-size: 14px;
+  color: #999999;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.liquidity_notice h5 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666666;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.liquidity_notice h5 a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #008485; /* 링크 색상 추가 */
+}
+
+.liquidity_notice h5 a:hover {
+  text-decoration: underline;
+  color: #005f5f; /* 호버 시 링크 색상 변경 */
+}
+
+.finance-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.finance-middle-left {
+  width: 55%;
+}
+
+.finance-middle-right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#financeChart {
+  width: 100%;
+  height: 320px;
+}
+
+.finance-middle_box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.finance-middle_icon {
+  width: 50px;
+  height: 50px;
+  background-color: #e0f7fa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.finance-middle_text h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.finance-middle_text span,
+.finance-middle_text p {
+  font-size: 16px;
+  color: #333;
+}
+
+.finance-date button {
+  background-color: #61c0bf;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+.finance-date button:hover {
+  background-color: #3a8b8b;
+  transform: scale(1.05);
+}
+
+.finance-date button:active {
+  background-color: #2f6f6f;
+  transform: scale(1);
+}
+
+.finance-date button:focus {
+  outline: none;
+}
+
+.FinanceMain-custom-link {
+  text-decoration: underline; /* 밑줄 추가 */
+  color: #007bff; /* 기본 링크 색상 */
+}
+
+.FinanceMain-custom-link:hover {
+  text-decoration: none; /* 호버 시 밑줄 제거 */
+  color: #0056b3; /* 호버 시 링크 색상 변경 */
+}
+
+@keyframes blinkGreen {
+  0% {
+    color: black;
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes blinkRed {
+  0% {
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    color: black;
+  }
+}
+
+.FinanceMain-blink-green {
+  animation: blinkGreen 2s infinite; /* 초록색으로 깜빡임 */
+}
+
+.FinanceMain-blink-red {
+  animation: blinkRed 2s infinite; /* 빨간색으로 깜빡임 */
+}
+
+.FinanceMain-modal-close-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 24px;
+}

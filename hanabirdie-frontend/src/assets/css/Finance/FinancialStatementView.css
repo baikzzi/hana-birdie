@@ -1,0 +1,65 @@
+/* FinancialStatementView CSS Styles */
+.financial-statement-management-view {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.financial-statement-management-table-container {
+  overflow-x: auto;
+}
+
+.financial-statement-management-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.financial-statement-management-header {
+  background-color: #008485;
+  color: #ffffff;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+
+.financial-statement-management-cell {
+  padding: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background-color: #fafafa;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.financial-statement-management-table
+  tr:nth-child(even)
+  .financial-statement-management-cell {
+  background-color: #f0f0f0;
+}
+
+.financial-statement-management-table
+  tr:hover
+  .financial-statement-management-cell {
+  background-color: #e6f7ff;
+}
+
+.financial-statement-management-table thead tr {
+  border-bottom: 2px solid #008485;
+}
+
+.financial-statement-management-view p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-top: 20px;
+}

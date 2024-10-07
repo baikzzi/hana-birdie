@@ -1,0 +1,38 @@
+.financial-statement-management-layout {
+  min-height: 60vh;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #f0f2f5;
+}
+.year-selection-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.custom-select-dropdown {
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.financial-statement-management-upload-button {
+  background-color: #008485;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.financial-statement-management-upload-button:hover {
+  background-color: #27a596;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

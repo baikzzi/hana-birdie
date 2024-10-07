@@ -1,0 +1,275 @@
+/* 
+.finance-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1050;
+  overflow: auto;
+}
+
+.finance-modal.show {
+  display: block;
+}
+
+.finance-modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.finance-modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finance-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.material-symbols-outlined:hover {
+  color: #009148 !important;
+}
+
+.finance-modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.finance-chart-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.FinanceSummaryModal-top {
+  display: flex;
+}
+
+.finance-key-info-image {
+  margin: auto;
+}
+
+.finance-key-info-image img {
+  width: 120px;
+  height: 120px;
+}
+.finance-key-info {
+  width: 100%;
+}
+
+.finance-key-info h4 {
+  margin-bottom: 10px;
+}
+
+.finance-key-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.finance-key-info ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.finance-key-info ul li strong {
+  width: 150px;
+} */ /* FinanceSummaryModal.css */
+.finance-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1050;
+  overflow: auto;
+}
+
+.finance-modal.show {
+  display: block;
+}
+
+.finance-modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.finance-modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 900px; /* 최대 너비 증가 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finance-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.material-symbols-outlined:hover {
+  color: #009148 !important;
+}
+
+.finance-modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.FinanceSummaryModal-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.finance-key-info-image {
+  flex: 1 1 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.finance-key-info-image img {
+  width: 120px;
+  height: 120px;
+  margin-top: 20px;
+}
+
+.finance-key-info {
+  flex: 2 1 300px;
+  margin: 10px;
+}
+
+.finance-key-info h4 {
+  margin-bottom: 10px;
+}
+
+.finance-key-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.finance-key-info ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.finance-key-info ul li strong {
+  width: 150px;
+}
+
+.finance-charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* 가로 정렬 */
+  width: 100%;
+  gap: 20px;
+}
+
+.finance-chart {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 차트와 제목 간의 간격 조정 */
+  margin-bottom: 20px;
+}
+
+.finance-chart .highcharts-container {
+  width: 150px !important; /* 차트 너비 설정 */
+  height: 150px !important; /* 차트 높이 설정 */
+}
+
+.finance-chart h4 {
+  margin-top: 10px; /* 차트와 제목 간의 간격 조정 */
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 16px; /* 폰트 크기 조정 */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* 툴팁 위치 */
+  left: 50%;
+  margin-left: -110px; /* 툴팁의 절반 너비만큼 이동 */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 툴팁 아래쪽에 삼각형 추가 */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}

@@ -1,0 +1,74 @@
+/* DefaultView.css */
+.financial-statement-management-default-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+
+.preview {
+  width: 100%;
+  max-width: 500px;
+  height: 250px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 3px dashed #eee;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.preview:hover {
+  border-color: #111;
+}
+
+.preview.active {
+  background-color: #efeef3;
+  border-color: #111;
+}
+
+.preview_msg {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 20px 0 10px;
+}
+
+.preview_desc {
+  margin: 0;
+  font-size: 14px;
+}
+
+.defaultView-icon {
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+}
+
+.file {
+  display: none;
+}
+
+.preview_info {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview_info .info_key {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.preview_info .info_value {
+  font-size: 14px;
+}
