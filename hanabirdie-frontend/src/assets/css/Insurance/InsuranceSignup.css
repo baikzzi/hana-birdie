@@ -1,0 +1,123 @@
+/* 공통 CSS */
+
+.signup-container,
+.insurance4-wrap,
+.insurance_signup2,
+.signup-time-select-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #008485;
+}
+
+button,
+.btn-confirm,
+.btn-floating,
+.next-button,
+.plan-btn.selected,
+.btn-change-coverage {
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+.btn-confirm:hover,
+.btn-floating:hover,
+.next-button:hover,
+.plan-btn.selected:hover,
+.btn-change-coverage:hover {
+  background-color: #27a596;
+}
+
+input[type="checkbox"]:checked + i,
+input[type="checkbox"]:checked + .slider {
+  background-color: #008485;
+}
+
+.date-picker,
+.end-wrap {
+  max-width: 500px;
+  width: 100%;
+}
+
+.date-picker .dropdown-toggle,
+.end-wrap .end-date {
+  border: 1px solid #ced4da;
+  background-color: #ffffff;
+  padding: 12px;
+  color: #495057;
+  width: 100%;
+}
+
+.summary-item,
+.insurance_signup2 .summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  color: #495057;
+}
+
+.summary-item p.inactive,
+.insurance_signup2 .inactive {
+  color: #aaa;
+}
+
+.modal-header h2,
+.modal-content p {
+  color: #333;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.checkbox input[type="checkbox"]:checked + i {
+  background-color: #008485;
+}
+
+.btn-question,
+.btn-change-coverage {
+  background-color: transparent;
+  border: none;
+  color: #008485;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-change-coverage:hover {
+  color: #27a596;
+}
+
+.agreement-section .agreement-item input[type="checkbox"]:checked {
+  accent-color: #008485;
+}
+
+.InsuranceSignup3-button.enabled {
+  background-color: #008485;
+}
+
+.InsuranceSignup3-button.enabled:hover {
+  background-color: #27a596;
+}
+
+/* 각 페이지에서 필요한 추가 스타일 */

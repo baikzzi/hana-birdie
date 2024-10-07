@@ -1,0 +1,229 @@
+body {
+  font-family: HanwhaGothic, -apple-system, system-ui, HelveticaNeue,
+    AppleSDGothicNeo, sans-serif;
+  color: var(--hli-color-text-body, #272b2f);
+}
+
+.insurance-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insurance-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.insurance-section-header .title {
+  font-size: var(--hli-font-size-title-large, 1.875rem);
+  margin-bottom: 0.5rem;
+}
+
+.insurance-section-header .description {
+  color: var(--hli-color-text-body-2, #5e5c5a);
+}
+
+.product-navigation {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--hli-color-border-3, #e5e4e3);
+  padding-bottom: 1rem;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.product-item {
+  text-align: center;
+  text-decoration: none;
+  color: var(--hli-color-text-body-2, #5e5c5a);
+  padding: 0.5rem;
+  border-radius: var(--hli-border-radius-medium, 8px);
+  transition: background-color 0.3s ease;
+}
+
+.product-item.active {
+  background-color: var(--hli-color-surface-primary, #fa6600);
+  color: var(--hli-color-text-body-0, #ffffff);
+}
+
+.product-item .icon img {
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+.product-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background-color: var(--hli-color-background-1, #ffffff);
+  border-radius: var(--hli-border-radius-large, 12px);
+  padding: 1.5rem;
+  box-shadow: var(--hli-box-shadow-small, 0px 5px 8px rgb(0 0 0 / 2%));
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.tag-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--hli-color-surface-primary, #008485);
+  color: var(--hli-color-text-body-0, #ffffff);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--hli-border-radius-small, 4px);
+  font-size: var(--hli-font-size-text-xsmall, 0.875rem);
+}
+
+.tag.best {
+  background-color: var(--hli-color-additional-custom-2, #1ab198);
+}
+
+.tag.new {
+  background-color: var(--hli-color-additional-semantic-3, #e39e1c);
+}
+
+.caption {
+  font-size: var(--hli-font-size-text-xsmall, 0.875rem);
+  color: var(--hli-color-text-neutral-1, #908f8e);
+  margin-top: 0.5rem;
+}
+
+.card-body .card-title {
+  font-size: var(--hli-font-size-title-small, 1.25rem);
+  color: var(--hli-color-text-body, #272b2f);
+  margin-bottom: 0.75rem;
+}
+
+.card-body .description {
+  color: var(--hli-color-text-neutral-2, #b4b3b2);
+}
+
+.product-inquiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  border-radius: var(--hli-border-radius-large, 12px);
+}
+
+.inquiry-body .title {
+  font-size: var(--hli-font-size-title-small, 1.25rem);
+  color: var(--hli-color-text-body, #272b2f);
+  margin-bottom: 0.5rem;
+}
+
+.inquiry-body .description {
+  color: var(--hli-color-text-body-2, #5e5c5a);
+}
+
+.inquiry-image img {
+  width: 80px;
+  height: auto;
+}
+
+.inquiry-button .button {
+  display: inline-block;
+  background-color: var(--hli-color-surface-primary, #008485);
+  color: var(--hli-color-text-body-0, #ffffff);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--hli-border-radius-medium, 8px);
+  text-decoration: none;
+  font-size: var(--hli-font-size-text-medium, 1.125rem);
+}
+
+.inquiry-button .button:hover {
+  background-color: var(--hli-color-text-primary-1, #27a596);
+}
+
+.product-card .card-header .icon img {
+  width: 50px; /* Adjust the width to the desired size */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto 0.5rem; /* Center the image and add space below it */
+  max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+}
+
+.product-card .tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center; /* Align tags in the center */
+}
+
+.product-navigation .product-list .product-item .icon img {
+  width: 80px; /* Set the desired width */
+  height: 80px; /* Set the desired height */
+  display: block;
+  margin: 0 auto; /* Center the image within the icon */
+}
+
+.product-navigation .product-list .product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.product-navigation .product-list .name {
+  margin-top: 0.5rem; /* Add some space between the icon and the name */
+  font-size: 14px; /* Adjust the font size if needed */
+}
+
+.product-inquiry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff; /* Or any other background color */
+  padding: 20px;
+  border-radius: 8px;
+  padding-left: 360px;
+  padding-right: 310px;
+}
+
+.inquiry-image img {
+  max-width: 100px; /* Adjust the size as necessary */
+  height: auto;
+  margin-right: 20px;
+}
+
+.inquiry-body {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.inquiry-button .button {
+  background-color: #008485; /* Adjust the color as needed */
+  padding: 10px 20px;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.inquiry-button {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,56 @@
+.insurance-signup-complete-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+  text-align: center;
+}
+
+.completion-message {
+  margin-bottom: 40px;
+}
+
+.completion-message h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #008485; /* 메인 컬러 */
+  margin-bottom: 20px;
+}
+
+.gif-style {
+  width: 800px; /* GIF 크기 조정 */
+  height: 250px;
+}
+
+.insurance-signup-action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* 버튼 간격 조정 */
+  width: 30%;
+}
+
+.insurance-signup-action-buttons button {
+  background-color: #008485; /* 메인 버튼 색상 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 300px; /* 버튼 너비 제한 */
+}
+
+.insurance-signup-action-buttons button:hover {
+  background-color: #00695c; /* 호버 시 색상 변경 */
+}
+
+.insurance-signup-action-buttons .home-button {
+  background-color: #008485; /* 홈 버튼에 다른 색상 적용 */
+}
+
+.insurance-signup-action-buttons .home-button:hover {
+  background-color: #00332a; /* 호버 시 색상 변경 */
+}

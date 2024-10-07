@@ -1,0 +1,254 @@
+.signup-time-select-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.time-select-header {
+  margin-bottom: 20px;
+}
+
+.time-select-header .title {
+  font-size: 24px;
+  color: #008485;
+  margin-bottom: 10px;
+  text-align: left; /* 좌측 정렬 */
+}
+
+.time-select-header .note {
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.time-select-header .subtitle {
+  font-size: 16px;
+  color: #adb5bd;
+}
+
+/* 구분선 */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ced4da;
+  margin: 10px 0;
+}
+
+/* 중간과 끝 부분 레이아웃 설정 */
+.middle-wrap,
+.end-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.middle-wrap-left,
+.end-wrap-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.middle-wrap-right,
+.end-wrap-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.middle-wrap-left,
+.end-wrap-left,
+.middle-wrap-right,
+.end-wrap-right {
+  width: 50%; /* 각 요소가 전체 너비의 50%씩 사용 */
+  box-sizing: border-box; /* 패딩 포함한 박스 크기 계산 */
+  padding: 0 10px; /* 요소 간 여백 추가 */
+}
+
+/* 날짜 선택 스타일 */
+.date-picker {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #495057;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  margin-top: 30px;
+}
+
+.dropdown-toggle:hover {
+  border-color: #adb5bd;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+.dropdown.show .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker-wrapper {
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.time-picker {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hour-minute {
+  width: 48%;
+}
+
+.dropdown-content select {
+  padding: 8px;
+  font-size: 16px;
+  color: #495057;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* 종료일시 섹션 스타일 */
+.end-wrap {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.end-wrap .title {
+  font-size: 20px;
+  color: #008485;
+  margin-bottom: 10px;
+}
+
+.end-wrap .subtitle {
+  font-size: 16px;
+  color: #adb5bd;
+  margin-bottom: 10px;
+}
+
+.end-wrap .end-date {
+  display: inline-block;
+  padding: 12px;
+  font-size: 16px;
+  color: #495057;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 30px;
+}
+
+/* 안내문 섹션 스타일 */
+.notice-wrap {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.notice p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #495057;
+}
+
+/* 다음 버튼 스타일 */
+.next-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #008485;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button.active:hover {
+  background-color: #006f6f;
+}
+
+.next-button:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.period-wrap {
+  margin-top: 20px; /* 상단과의 간격 */
+  border-radius: 8px; /* 모서리를 둥글게 */
+}
+
+.period-wrap span {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px; /* 텍스트와 버튼 사이 간격 */
+  font-weight: bold; /* 텍스트 굵게 */
+}
+
+.period-select {
+  display: flex;
+  justify-content: space-around; /* 버튼들 간격을 고르게 */
+}
+
+.period-select button {
+  flex: 1; /* 버튼들이 동일한 너비를 가지도록 */
+  margin: 0 5px; /* 버튼 사이 간격 */
+  padding: 10px;
+  font-size: 14px;
+  color: #008485; /* 텍스트 색상 */
+  background-color: #ffffff; /* 버튼 배경색 */
+  border: 1px solid #008485; /* 테두리 색상 */
+  border-radius: 4px; /* 모서리를 둥글게 */
+  cursor: pointer;
+  transition: all 0.3s ease; /* 마우스 오버시의 전환 효과 */
+}
+
+.period-select button:hover {
+  background-color: #008485; /* 마우스 오버시 배경색 */
+  color: #ffffff; /* 마우스 오버시 텍스트 색상 */
+}
+
+.period-select button.selected {
+  background-color: #008485; /* 선택된 버튼의 배경색 */
+  color: #ffffff; /* 선택된 버튼의 텍스트 색상 */
+}

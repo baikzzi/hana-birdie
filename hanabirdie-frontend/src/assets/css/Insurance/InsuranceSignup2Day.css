@@ -1,0 +1,213 @@
+.insurance_signup2_wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.insurance_signup2 .total-premium {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insurance_signup2 .premium-amount {
+  font-size: 24px;
+  color: #008485;
+}
+
+.insurance_signup2 .insurance-info {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.insurance_signup2 .section.full {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .coverage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insurance_signup2 .left {
+  display: flex;
+  align-items: center;
+}
+
+.insurance_signup2 .right {
+  text-align: right;
+}
+
+.insurance_signup2 .btn-question {
+  background-color: #888;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurance_signup2 .btn-question img {
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+}
+
+.insurance_signup2 .btn-change-coverage {
+  background-color: transparent;
+  border: none;
+  color: #008485;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.insurance_signup2 .coverage-summary {
+  padding: 20px;
+}
+
+.insurance_signup2 .summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.insurance_signup2 .inactive {
+  color: #aaa;
+}
+
+.insurance_signup2 .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.insurance_signup2 .modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 500px;
+}
+
+.insurance_signup2 .modal-header {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .insurance-signup2-modal-content {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .coverage-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.insurance_signup2 .coverage-detail {
+  margin-bottom: 15px;
+}
+
+.insurance_signup2 .detail-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.insurance_signup2 .btn-confirm {
+  width: 100%;
+  padding: 10px;
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Toggle Switch */
+.insurance_signup2 .switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.insurance_signup2 .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.insurance_signup2 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.insurance_signup2 .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.insurance_signup2 input:checked + .slider {
+  background-color: #008485;
+}
+
+.insurance_signup2 input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.insurance-signup2-title {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.inner-button {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 100%;
+}
+
+.insurance-signup-btn-floating {
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #008485 !important;
+  color: white;
+  border: none;
+}

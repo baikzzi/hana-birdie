@@ -1,0 +1,113 @@
+.insurace-signup3-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.progress-steps {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.progress-dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.progress-dots .dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.progress-dots .dot.active {
+  background-color: #008485;
+}
+
+.title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.agreement-section {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.agreement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agreement-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.agreement-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.agreement-item input[type="checkbox"] {
+  margin-right: 15px;
+  width: 24px;
+  height: 24px;
+  accent-color: #008485; /* For modern browsers */
+}
+
+.agreement-text {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.highlight-text {
+  color: #008485;
+  font-weight: bold;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.InsuranceSignup3-button {
+  background-color: #ccc;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+.InsuranceSignup3-button.enabled {
+  background-color: #008485;
+  cursor: pointer;
+}
+
+.InsuranceSignup3-button.enabled:hover {
+  background-color: #27a596;
+}
+
+.InsuranceSignup3-button.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

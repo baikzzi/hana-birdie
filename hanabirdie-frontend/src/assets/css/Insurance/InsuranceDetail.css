@@ -1,0 +1,352 @@
+.insurance-detail-wrap {
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.insurance-detail .section_box100 {
+  margin: 30px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.insurance-detail .product_title h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.insurance-detail .base_box h4,
+.insurance-detail .text_cont_box h4 {
+  font-size: 20px;
+  color: #008485;
+  margin-bottom: 15px;
+}
+
+.insurance-detail .base_tb {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.insurance-detail .base_tb th,
+.insurance-detail .base_tb td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.insurance-detail .base_tb th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.insurance-detail .base_tb td.tal {
+  text-align: left;
+}
+
+.insurance-detail .base_tb td.tac {
+  text-align: center;
+}
+
+.insurance-detail .txt_list_01 li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.insurance-detail .txt_list_01.icon1 li:before {
+  content: "•";
+  color: #008485;
+  margin-right: 5px;
+}
+
+.insurance-detail .neon_red {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.insurance-detail .btn_box {
+  text-align: center;
+  margin-top: 30px;
+  display: flex; /* Flexbox를 사용하여 버튼들을 가로로 정렬 */
+  justify-content: center; /* 버튼들을 중앙에 정렬 */
+  gap: 50px; /* 버튼 사이의 간격을 설정 */
+}
+
+.insurance-detail .btn:hover {
+  background-color: #27a596;
+}
+
+.insurance-detail .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #008485;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 10px;
+  max-width: 200px; /* 버튼의 최대 너비를 제한 */
+}
+
+.insurance-detail .btn:last-child {
+  margin-right: 0;
+}
+
+.insurance-detail .btn.acrobat_btn {
+  background-color: #d9534f;
+}
+
+.acc_group {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+dl {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+dt {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+dt:hover {
+  color: #008485;
+  text-decoration: underline;
+}
+
+dt.open {
+  color: #008485;
+  text-decoration: underline;
+}
+
+dd {
+  padding: 15px;
+  padding-left: 0;
+  display: none;
+  margin-left: 15px;
+}
+
+dd .number {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 15px;
+}
+
+dd .number li {
+  margin-bottom: 10px;
+}
+
+.item-number {
+  color: #008080;
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.text_cont_box p {
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow:before {
+  content: "\25BC";
+  font-size: 12px;
+}
+
+.arrow.open:before {
+  transform: rotate(180deg);
+}
+
+/* Tab Styles Specific to InsuranceDetail Component */
+.insurance-detail-tab-container {
+  margin-top: 30px;
+}
+
+.insurance-detail-tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.insurance-detail-tab-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.insurance-detail-tab-button.active {
+  background-color: #008485;
+  color: #fff;
+}
+
+.insurance-detail-tab-button:last-child {
+  margin-right: 0;
+}
+
+.insurance-detail-tab-button:hover {
+  background-color: #ddd;
+}
+
+.insurance-detail-tab-content {
+  display: none;
+}
+
+.insurance-detail-tab-content.active {
+  display: block;
+}
+
+/* Popup General Styles */
+.popup-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 80%;
+  max-width: 500px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.popup-header-detail {
+  background-color: #ffffff;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+  position: relative;
+}
+
+.popup-header-detail h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #000000;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.popup-close:hover {
+  color: #008485;
+}
+
+.popup-content {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Popup Plan List Styles */
+.popup-select-plan {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-select-plan li {
+  margin-bottom: 10px;
+}
+
+.plan-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.plan-content:last-child {
+  margin-bottom: 0;
+}
+
+/* Specific Plan Styles */
+.type-oneday {
+  background-color: #e0f7fa;
+}
+
+.type-longterm {
+  background-color: #e3f2fd;
+}
+
+.plan-text {
+  margin-left: 20px;
+}
+
+.plan-text b {
+  font-size: 16px;
+  color: #00796b;
+}
+
+/* Plan Image Styles */
+.popup-plan-image {
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin-right: 20px;
+}
+
+/* Button Styles */
+.btn-floating {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-floating:hover {
+  background-color: #008485;
+}
+
+.insurance-detail-wrap ul {
+  list-style-type: none; /* 리스트 스타일 없앰 */
+  margin: 0; /* 기본 마진 제거 */
+  padding: 0; /* 기본 패딩 제거 */
+}
+.insurance-detail-wrap li {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,287 @@
+.insurance_signup2_wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.insurance_signup2 .total-premium {
+  padding: 20px;
+  border-bottom: 1px solid #d1e3f0; /* Light blue-grey for subtle separation */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insurance_signup2 .premium-amount {
+  font-size: 24px;
+  color: #008485;
+}
+
+.insurance_signup2 .insurance-info {
+  padding: 20px;
+  border-bottom: 1px solid #d1e3f0;
+}
+
+.insurance_signup2 .section.full {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .coverage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.insurance_signup2 .left {
+  display: flex;
+  align-items: center;
+}
+
+.insurance_signup2 .right {
+  text-align: right;
+}
+
+.insurance_signup2 .btn-question {
+  background-color: #888;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurance_signup2 .btn-question img {
+  width: 18px;
+  height: 18px;
+  margin-left: 0;
+}
+
+.insurance_signup2 .btn-change-coverage {
+  background-color: transparent;
+  border: none;
+  color: #008485;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.insurance_signup2 .coverage-summary {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.insurance_signup2 .summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.insurance_signup2 .inactive {
+  color: #aaa;
+}
+
+.insurance_signup2 .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.insurance_signup2 .modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 500px;
+}
+
+.insurance_signup2 .modal-header {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .insurance-signup2-modal-content {
+  margin-bottom: 20px;
+}
+
+.insurance_signup2 .coverage-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.insurance_signup2 .coverage-detail {
+  margin-bottom: 15px;
+}
+
+.insurance_signup2 .detail-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.insurance_signup2 .btn-confirm {
+  width: 100%;
+  padding: 10px;
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Toggle Switch */
+.insurance_signup2 .switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.insurance_signup2 .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.insurance_signup2 .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.insurance_signup2 .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.insurance_signup2 input:checked + .slider {
+  background-color: #008485;
+}
+
+.insurance_signup2 input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+.coverage-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.coverage-table th,
+.coverage-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.coverage-table th {
+  background-color: #f2f2f2;
+}
+
+/* 전체 컨테이너 스타일 */
+.insurance_signup2 {
+  padding-bottom: 20px;
+}
+
+/* 보장내용 헤더 섹션 스타일 */
+.insurance_signup2 .coverage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.insurance_signup2 .select-tab {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* 너비를 가득 채우도록 설정 */
+}
+
+.insurance_signup2 .select-tab ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+}
+
+.insurance_signup2 .select-tab ul li {
+  flex: 1;
+}
+
+.insurance_signup2 .select-tab .plan-btn {
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #f4f8fb; /* Lighter background for better contrast */
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #333; /* Darker color for better readability */
+  border-bottom: 2px solid transparent; /* 기본적으로는 강조선이 없음 */
+}
+
+.insurance_signup2 .select-tab .plan-btn.selected {
+  background-color: #ffffff;
+  color: #009178;
+  font-weight: bold;
+  border-bottom: 2px solid #008485; /* 선택된 탭 하단 강조선 */
+}
+
+.insurance_signup2 .select-tab .plan-btn:hover {
+  background-color: #e0e8ef;
+}
+
+.insurance-signup2-title {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.inner-button {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  height: 100%;
+}
+
+.insurance-signup-btn-floating {
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #008485 !important;
+  color: white;
+  border: none;
+}

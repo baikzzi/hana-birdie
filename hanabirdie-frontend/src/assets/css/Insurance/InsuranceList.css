@@ -1,0 +1,214 @@
+.insurance-list-container {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.insurance-list-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+.insurance-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.insurance-item {
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
+}
+
+.insurance-item:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.insurance-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #008485;
+}
+
+.insurance-detail {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.insurance-detail strong {
+  color: #333;
+}
+/* Container styling */
+.insurance-list-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header title styling */
+.insurance-list-governing_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Flex container for the header with contract type and filter button */
+.insurance-list-fold_header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.insurance-list-title {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.insurance-list-title span:nth-child(2):before {
+  content: "|";
+  margin-right: 8px;
+}
+
+.insurance-list-btn.toggle {
+  background-color: #f8f9fa;
+  padding: 6px 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  color: #008485;
+  font-weight: bold;
+}
+
+.insurance-list-fold_body {
+  border-radius: 10px;
+  border: 0.5px solid #aaaaaa;
+  padding: 20px;
+}
+
+/* Radio button groups */
+.insurance-list-option_area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.insurance-list-btn_rdo {
+  display: none;
+}
+
+.insurance-list-btn_rdo + label {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Selected radio button styling */
+.insurance-list-btn_rdo:checked + label {
+  background-color: #008485;
+  color: white;
+  border-color: #008485;
+}
+
+.insurance-list-btn_rdo + label:hover {
+  background-color: #27a596;
+  color: white;
+}
+
+/* Labels for form items */
+.insurance-list-form_label {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.insurance-list-form_title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.insurance-list-option_area.size01 label {
+  flex: 1 1 48%; /* Ensure each button fills half the row */
+  text-align: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.insurance-list-option_area.size02 label {
+  flex: 1 1 48%; /* Ensure each button fills half the row */
+  text-align: center;
+  margin-bottom: 10px;
+
+  gap: 10px;
+}
+
+.insurance-list-option_area label {
+  margin-left: 10px; /* Add space between input and label */
+}
+
+/* Search button */
+.insurance-list-btn_area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.insurance-list-btn.fill04 {
+  background-color: #008485;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.insurance-list-btn.fill04:hover {
+  background-color: #27a596;
+}
+
+.insurance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.insurance-table th,
+.insurance-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.insurance-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.insurance-table td {
+  background-color: #fff;
+}
