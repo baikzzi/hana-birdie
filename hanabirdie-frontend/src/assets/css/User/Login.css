@@ -1,0 +1,97 @@
+/* 전체 컨테이너 스타일 */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  background-color: #f1f3f8;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 로그인 제목 스타일 */
+.login-container h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: #ff4d4f;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* 로그인 폼 스타일 */
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+  padding: 10px;
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #27a596;
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button {
+  padding: 10px;
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #27a596;
+}
