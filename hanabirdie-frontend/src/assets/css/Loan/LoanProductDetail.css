@@ -1,0 +1,120 @@
+.LoanProductDetailContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.LoanProductDetailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-bottom: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.LoanProductDetailItem:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.LoanProductDetailLeft {
+  flex: 1;
+}
+
+.LoanProductDetailRight {
+  flex: 0 0 150px; /* 오른쪽 이미지를 위한 고정 너비 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoanProductDetailImage {
+  width: 120px; /* 이미지 크기 */
+  height: auto;
+  border-radius: 8px;
+}
+
+.LoanProductDetailBox {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.LoanProductDetailContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.LoanProductDetailTop {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.LoanProductDetailFlags {
+  margin-bottom: 10px;
+}
+
+.LoanProductDetailFlag {
+  display: inline-block;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.LoanProductDetailTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.LoanProductDetailDescription {
+  font-size: 14px;
+  color: #555;
+}
+
+.LoanProductDetailButtonWrap {
+  display: flex; /* 버튼들을 옆으로 나란히 배치 */
+  justify-content: space-between; /* 버튼 사이 간격을 자동으로 배치 */
+}
+
+.LoanProductDetailCalculator,
+.LoanProductDetailApply {
+  flex: 1; /* 두 버튼이 동일한 너비를 가짐 */
+  margin: 0 10px; /* 버튼 사이의 간격 조정 */
+}
+
+.LoanProductDetailApplyButton {
+  width: 100%; /* 버튼이 부모 요소의 너비를 채움 */
+  min-width: 150px;
+  background-color: #e7e7e7;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoanProductDetailApplyButton img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* 버튼 내 이미지와 텍스트 사이 간격 */
+}
+
+.LoanProductDetailApplyButton:hover {
+  background-color: #c0c0c0;
+}

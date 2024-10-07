@@ -1,0 +1,267 @@
+/* src/assets/css/Loan/ApplyLoan.css */
+
+/* 기본 레이아웃 */
+.applyLoan-apply-loan-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.applyLoan-main-content {
+  padding: 20px;
+}
+
+/* 헤더 */
+.applyLoan-header {
+  display: flex;
+  flex-direction: column; /* 요소들을 수직으로 배치 */
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.applyLoan-title {
+  display: flex;
+  align-items: center;
+}
+
+.applyLoan-title h2 {
+  margin-right: 10px; /* "기업대출신청"과 {loanDetails.detail} 사이 여백 */
+  font-size: 24px; /* 필요에 따라 조정 */
+}
+
+.applyLoan-title #loanName2 {
+  font-size: 18px;
+  color: #555; /* 필요에 따라 조정 */
+}
+
+.applyLoan-upload-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* 버튼을 오른쪽 끝으로 정렬 */
+  margin-top: 30px; /* 타이틀과 버튼 사이 여백 */
+}
+
+.applyLoan-upload-button {
+  background-color: #008485;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.applyLoan-upload-button:hover {
+  background-color: #27a596;
+}
+
+/* 기본사항 및 대출내용 섹션 헤더 */
+.applyLoan-section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.applyLoan-section-header .material-icons-sharp {
+  margin-right: 5px;
+}
+
+/* .applyLoan-apply-loan-container table input {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 0.1px solid black;
+  background-color: rgb(241, 243, 248);
+} */
+.applyLoan-apply-loan-container table input {
+  width: 95%;
+  height: 20px; /* Adjust height to ensure consistent sizing */
+  padding: 5px 5px; /* Add some padding inside the input */
+  border-radius: 5px; /* Increase border-radius for a smoother look */
+  border: 1px solid #d1d5db; /* Light gray border */
+  background-color: rgb(241, 243, 248);
+  font-size: 14px; /* Adjust the font size */
+  color: #4a5568; /* Set a darker color for the input text */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Add subtle inner shadow */
+}
+
+.applyLoan-apply-loan-container table input:focus {
+  border-color: #008485; /* Change border color on focus */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(0, 132, 133, 0.2); /* Add a shadow to indicate focus */
+}
+
+.applyLoan-apply-loan-container table select {
+  width: 150px;
+  height: 30px;
+  border: 1px solid #d1d5db; /* Light gray border */
+  background-color: rgb(241, 243, 248);
+}
+
+.applyLoan-apply-loan-container table input[type="date"] {
+  max-width: 235px;
+}
+
+/* 폼 섹션 */
+.applyLoan-form-section {
+  margin-bottom: 20px;
+}
+
+.applyLoan-loan-apply-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.applyLoan-loan-apply-table th,
+.applyLoan-loan-apply-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.applyLoan-loan-apply-table th {
+  background-color: #f2f2f2;
+}
+
+/* 버튼 */
+.applyLoan-submit-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.applyLoan-submit-button,
+.applyLoan-secondary-button {
+  background-color: #008485;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.applyLoan-submit-button:hover,
+.applyLoan-secondary-button:hover {
+  background-color: #27a596;
+}
+
+/* 알림 */
+.applyLoan-alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.applyLoan-alert.success {
+  background-color: #4caf50; /* Green */
+}
+
+.applyLoan-alert.warning {
+  background-color: #ff9800; /* Orange */
+}
+
+.applyLoan-alert .applyLoan-closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 로딩 스피너 */
+.applyLoan-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.applyLoan-spinner {
+  border: 12px solid #f3f3f3; /* Light grey */
+  border-top: 12px solid #008485; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: applyLoan-spin 1s linear infinite;
+}
+
+/* 스피너 애니메이션 */
+@keyframes applyLoan-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 동의서 링크 */
+.applyLoan-downloadApply {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.applyLoan-downloadApply img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* 파일 미리보기 */
+.applyLoan-preview-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+/* 기타 스타일 */
+.applyLoan-agreement {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.applyLoan-agreement-left {
+  min-width: 500px;
+  max-width: 500px;
+}
+
+.applyLoan-agreement input[type="checkbox"] {
+  flex-shrink: 0; /* 체크박스 크기 고정 */
+}
+
+.applyLoan-agreement label {
+  flex-shrink: 0;
+  /* 필요한 경우, 레이블의 너비를 고정하여 링크가 일관되게 시작하도록 조정할 수 있습니다 */
+  width: 400px; /* 예시: 레이블의 너비를 고정 */
+  margin-left: 5px;
+}
+
+.applyLoan-downloadApply {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* 이미지와 텍스트 간 간격을 설정 */
+  text-decoration: none;
+  color: inherit;
+}
+
+.applyLoan-downloadApply img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.applyLoan-downloadApply span {
+  margin: 0; /* 기본 여백 제거 */
+  font-size: 14px; /* 필요에 따라 폰트 크기 조정 */
+}

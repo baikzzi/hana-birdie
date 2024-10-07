@@ -1,0 +1,75 @@
+/* LoanHistoryDetail.css */
+
+/* 모달 오버레이 - 배경을 흐리게 처리 */
+.LoanHistoryDetail_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 배경 흐리게 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 모달이 상위에 표시되도록 */
+}
+
+/* 모달 콘텐츠 - 화면 중앙에 표시 */
+.LoanHistoryDetail_content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  position: relative;
+  z-index: 1001; /* 오버레이보다 위에 표시되도록 */
+}
+
+/* 헤더 - 닫기 버튼과 제목 정렬 */
+.LoanHistoryDetail_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LoanHistoryDetail_close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 바디 */
+.LoanHistoryDetail_body {
+  margin-top: 20px;
+}
+
+.LoanHistoryDetail_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.LoanHistoryDetail_table th,
+.LoanHistoryDetail_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.LoanHistoryDetail_table th {
+  background-color: #f4f4f4;
+  width: 30%;
+}
+
+.LoanHistoryDetail_summary {
+  margin-top: 20px;
+}
+
+.LoanHistoryDetail_summary h3 {
+  margin-bottom: 10px;
+}
+
+.LoanHistoryDetail_summary p {
+  margin: 5px 0;
+}

@@ -1,0 +1,306 @@
+.loanProduct-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loan-search-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loan-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.loan-inquiry-product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loan-theme-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.loan-theme-list li {
+  background-color: white;
+  width: 160px;
+  border-radius: 12px;
+  padding: 20px;
+
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.loan-theme-list li:hover {
+  transform: scale(1.05);
+  background-color: #eaeaea;
+}
+
+.loan-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 이미지와 텍스트 중앙 정렬 */
+}
+
+.loan-item img {
+  width: 80px; /* 이미지 크기 조정 */
+  height: 80px;
+}
+
+.loan-body {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loan-search-product {
+  min-width: 600px;
+  margin-bottom: 40px;
+}
+
+.loan-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.loan-search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  border: 2px solid #e6f0ff;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+}
+
+.loan-search-input:focus {
+  border-color: #009178;
+}
+
+.loan-search-btn {
+  background-color: transparent;
+  border: none;
+  margin-left: -40px; /* 버튼을 오른쪽에 위치시키고, 검색창과 겹치게 하기 */
+  cursor: pointer;
+}
+
+.loan-search-btn .material-symbols-outlined {
+  font-size: 24px;
+  color: #009178;
+}
+
+.loan-btn-search {
+  background-color: #e6f0ff;
+  color: #008485;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.loan-btn-search:hover {
+  background-color: #009178;
+  color: white;
+}
+
+.loan-keyword-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.loan-btn-keyword {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.loan-btn-keyword:hover {
+  color: #009178;
+  font-weight: bold;
+}
+
+/* 대출 상품 리스트 */
+.loanProductContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.loanSearchContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.loanTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.loanInquiryContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loanThemeList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.loanItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loanSearchProduct {
+  margin-top: 40px;
+}
+
+.loanSearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loanSearchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  border: 2px solid #e6f0ff;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+}
+
+.loanSearchInput:focus {
+  border-color: #009178;
+}
+
+.loanSearchBtn {
+  background-color: transparent;
+  border: none;
+  margin-left: -40px;
+  cursor: pointer;
+}
+
+.loanSearchBtn .material-symbols-outlined {
+  font-size: 24px;
+  color: #009178;
+}
+
+.loanProductList {
+  margin-top: 40px;
+}
+
+.prdInfo {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.prdList {
+  list-style: none;
+  padding: 0;
+}
+
+.prdItem {
+  width: 600px;
+  background-color: white;
+  margin-bottom: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.prdItem:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.prdBox {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.prdContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.prdTop {
+  border-bottom: 1px dashed #e6e6e6;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.prdFlags {
+  margin-bottom: 10px;
+}
+
+.prdFlag {
+  display: inline-block;
+  background-color: #e0f7fa;
+  color: #00796b;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.prdTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.prdDescription {
+  font-size: 14px;
+  color: #555;
+}
+
+.prdBottom {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.prdMore {
+  text-align: right;
+  color: #009688;
+  font-weight: bold;
+}
+
+.prdMore p {
+  margin: 0;
+}

@@ -1,0 +1,53 @@
+.loanMainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1140px;
+  width: 92%;
+}
+
+.textOverlay {
+  top: 20px;
+  z-index: 1;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.loanProcessImg {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.loanStep {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.button {
+  padding: 15px 30px;
+  background-color: #008485;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  margin-bottom: 50px;
+}
+
+.button:hover {
+  background-color: #00adad;
+}

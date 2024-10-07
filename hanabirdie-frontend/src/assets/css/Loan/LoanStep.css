@@ -1,0 +1,98 @@
+/* Container for the steps */
+.LoanStep-container {
+  display: flex;
+  justify-content: center; /* Center the list horizontally */
+  align-items: center;
+  padding: 20px;
+  flex-wrap: nowrap;
+  gap: 30px; /* Increased gap between items from 20px to 30px */
+}
+
+.LoanStep-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* General step item styling */
+.LoanStep-item {
+  list-style: none;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* For positioning the icon */
+  height: 170px; /* Fixed height */
+  width: 240px;
+  min-width: 200px; /* Reduced from 220px */
+  max-width: 210px; /* Reduced from 230px */
+}
+
+/* Styling the step badge (STEP 1, STEP 2, etc.) */
+.LoanStep-badge {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5a6a8a;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Text inside the steps */
+.LoanStep-text {
+  font-size: 14px;
+  color: #2c3e50;
+  margin-bottom: 20px; /* Increased margin to create space above the icon */
+  line-height: 1.5;
+  flex: 1; /* Take available space */
+}
+
+.LoanStep-text strong {
+  font-weight: bold;
+}
+
+/* Inner container to separate contents and icon */
+.LoanStep-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* SVG icon container */
+.LoanStep-icon {
+  position: absolute; /* Position the icon absolutely within the item */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  padding: 8px; /* Reduced padding around the icon */
+  background-color: #f0f4f8; /* Icon background color */
+  border-radius: 8px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure SVG icons fit well */
+.LoanStep-icon svg {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+}
+
+/* Adding a visual dashed line between the steps */
+.LoanStep-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15px; /* Adjusted distance between dashed line and the item */
+  width: 30px; /* Increased width of the dashed line */
+  height: 2px;
+  background-color: #d0dae8;
+}
+
+/* Last child has no border */
+.LoanStep-item:last-child::after {
+  display: none;
+}

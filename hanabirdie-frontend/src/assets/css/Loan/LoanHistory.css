@@ -1,0 +1,147 @@
+/* src/assets/css/Loan/LoanHistory.css */
+
+/* Container */
+.loanHistory_container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Row */
+.loanHistory_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main Column */
+.loanHistory_col-main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Dashboard Content */
+.loanHistory_dashboard_content {
+  padding: 20px;
+}
+
+.loanHistory_dashboard_header {
+  margin-bottom: 30px;
+}
+.loanHistory_dashboard_header h2 {
+  margin: 0;
+}
+
+/* Loan Result Head */
+.loanHistory_loanResult_head {
+  margin-bottom: 20px;
+}
+
+.loanHistory_loanResult_head h4 {
+  margin: 0 0 5px 0;
+}
+
+.loanHistory_loanResult_head span {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Tables */
+.loanHistory_resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+.loanHistory_resultTable th,
+.loanHistory_resultTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.loanHistory_resultTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.loanHistory_resultTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.loanHistory_resultTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Buttons */
+.loanHistory_btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.loanHistory_btn-primary {
+  background-color: #007bff;
+}
+
+.loanHistory_btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.LoanHistory-search-button {
+  background: none;
+  border: none;
+  width: 30px;
+}
+
+/* Status Pill */
+.loanHistory_statusPill {
+  padding: 5px 10px;
+  border-radius: 15px;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+}
+
+/* Status Container */
+.loanHistory_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Loader */
+.loanHistory_loader {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Updates Section (if needed) */
+.loanHistory_updates {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.loanHistory_close_btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}

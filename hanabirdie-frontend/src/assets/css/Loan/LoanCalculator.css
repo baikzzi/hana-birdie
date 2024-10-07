@@ -1,0 +1,175 @@
+.LoanCalculator-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(195, 195, 195, 0.3);
+}
+
+.LoanCalculator-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.LoanCalculator-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* 버튼 위치 제어를 위한 상대 위치 설정 */
+}
+
+.LoanCalculator-close-button {
+  position: absolute; /* 오른쪽 끝에 붙이기 위해 절대 위치 설정 */
+  right: 0; /* 오른쪽 끝에 위치 */
+  width: 50px; /* 닫기 버튼 고정 너비 설정 */
+  height: 40px;
+  border: none;
+  background: transparent;
+  border: none !important;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.LoanCalculator-fixed-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+
+.LoanCalculator-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.LoanCalculator-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.LoanCalculator-radio-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.LoanCalculator-radio-box.LoanCalculator-selected {
+  border-color: #008485;
+}
+
+.LoanCalculator-button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.LoanCalculator-button-group button:hover {
+  background-color: #ccc;
+}
+
+.LoanCalculator-amount-reset,
+.LoanCalculator-interest-reset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LoanCalculator-reset-btn {
+  width: 40px; /* 초기화 버튼 너비 수정 */
+  background: #eee;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.LoanCalculator-modal-content button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1; /* 버튼이 동일한 너비를 차지하도록 설정 */
+}
+
+.LoanCalculator-calculate-button {
+  background-color: #008485;
+  color: white;
+  border: none;
+}
+
+.LoanCalculator-calculate-button:hover {
+  background-color: #27a596 !important;
+}
+
+.LoanCalculator-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.LoanCalculator-result-top {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+.LoanCalculator-schedule-entry {
+  margin-top: 15px; /* 예상 상환 스케쥴 간 간격 추가 */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.LoanCalculator-schedule-entry .LoanCalculator-row,
+.LoanCalculator-schedule-entry .LoanCalculator-row-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.LoanCalculator-row-top {
+  font-weight: bold;
+}
+
+.LoanCalculator-loan-term-dropdown select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.LoanCalculator-input {
+  width: 75%;
+  padding: 10px;
+  margin: 10px 0px;
+
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.LoanCalculator-max-rate-notice {
+  font-size: 12px;
+  color: #888;
+}
+
+.LoanCalculator-repayment-title {
+  font-weight: bold;
+}
+
+.LoanCalculator-repayment-description {
+  font-size: 14px;
+  color: #555;
+}

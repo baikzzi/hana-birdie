@@ -1,0 +1,86 @@
+/* src/assets/css/Loan/Section2.module.css */
+
+.home2Wrap {
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.home2Container {
+  background-color: rgb(241, 243, 248);
+  padding: 100px 0;
+}
+
+.home2ContainerInner {
+  max-width: 800px;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.home2TextWrap {
+  opacity: 0;
+  margin-bottom: 100px;
+  transform: translateY(150px);
+}
+.home2TextWrap h1 {
+  color: #008485;
+}
+
+.home2ContentTextWrap {
+  opacity: 0;
+  transform: translateY(150px);
+}
+
+.home2GridContainer {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+.home2Content {
+  margin-bottom: 100px;
+}
+
+/* 두번째 home2Content를 오른쪽으로 정렬 */
+.home2Content:nth-child(2) {
+  justify-self: end;
+}
+
+.home2Content img {
+  height: 120px;
+  margin-left: 20px;
+  opacity: 0;
+  transform: translateY(150px);
+  margin-bottom: 40px;
+}
+
+.home2Content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: rgb(51, 61, 75);
+  margin-bottom: 10px;
+}
+
+.home2Content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgb(107, 118, 132);
+}
+
+/* 애니메이션 */
+@keyframes appear_from_bottom {
+  0% {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateAppearFromBottom {
+  animation: appear_from_bottom ease 1.5s forwards;
+}
