@@ -1,0 +1,22 @@
+.top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.top-btn {
+  background-color: #008485;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.top-btn:hover {
+  background-color: #005f5f;
+}

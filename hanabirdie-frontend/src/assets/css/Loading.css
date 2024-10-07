@@ -1,0 +1,134 @@
+/* src/assets/css/Loading.css */
+
+.loading-container {
+  position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw; /* 전체 너비 */
+  height: 100vh; /* 전체 높이 */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(1.5px); /* 배경 블러 처리 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 다른 모든 요소 위에 표시 */
+}
+
+.loading-grid {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-template-rows: repeat(2, 160px);
+  gap: 60px;
+  margin-bottom: 30px;
+}
+
+/* 회전 애니메이션의 속도를 고정 (8초로) */
+.loading-image {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  position: absolute;
+}
+/* 이미지별 애니메이션: 8초 고정 */
+.img1 {
+  animation: rotatePositionsImg1 8s infinite;
+}
+.img2 {
+  animation: rotatePositionsImg2 8s infinite;
+}
+.img3 {
+  animation: rotatePositionsImg3 8s infinite;
+}
+.img4 {
+  animation: rotatePositionsImg4 8s infinite;
+}
+
+/* 각 이미지의 위치 이동 애니메이션 */
+@keyframes rotatePositionsImg1 {
+  0%,
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+  25% {
+    top: 0px;
+    left: 180px;
+  }
+  50% {
+    top: 220px;
+    left: 180px;
+  }
+  75% {
+    top: 220px;
+    left: 0px;
+  }
+}
+@keyframes rotatePositionsImg2 {
+  0%,
+  100% {
+    top: 0px;
+    left: 180px;
+  }
+  25% {
+    top: 220px;
+    left: 180px;
+  }
+  50% {
+    top: 220px;
+    left: 0px;
+  }
+  75% {
+    top: 0px;
+    left: 0px;
+  }
+}
+@keyframes rotatePositionsImg3 {
+  0%,
+  100% {
+    top: 220px;
+    left: 180px;
+  }
+  25% {
+    top: 220px;
+    left: 0px;
+  }
+  50% {
+    top: 0px;
+    left: 0px;
+  }
+  75% {
+    top: 0px;
+    left: 180px;
+  }
+}
+@keyframes rotatePositionsImg4 {
+  0%,
+  100% {
+    top: 220px;
+    left: 0px;
+  }
+  25% {
+    top: 0px;
+    left: 0px;
+  }
+  50% {
+    top: 0px;
+    left: 180px;
+  }
+  75% {
+    top: 220px;
+    left: 180px;
+  }
+}
+
+.loading-text {
+  font-size: 20px;
+  color: #888;
+  text-align: center;
+  margin-top: 100px;
+}

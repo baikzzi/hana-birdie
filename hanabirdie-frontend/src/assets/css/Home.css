@@ -1,0 +1,216 @@
+.home-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-wrap {
+  position: relative;
+  padding: 30px;
+  height: 450px;
+}
+
+.swiper-container {
+  height: 100%;
+}
+
+.swiper-slide {
+  background-color: var(--swiper-slide-bg-color, #fff);
+  color: #333;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.swiper-slide span,
+.swiper-slide h2,
+.swiper-slide p {
+  color: #ffffff;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.swiper-slide img {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: auto;
+  max-width: 300px;
+}
+
+.swiper-pagination {
+  position: static;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.section_middlecon_wrap {
+  width: 100%;
+  height: 160px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(102, 102, 102);
+  font-family: "Hana2-Regular", sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.section_middlecon_inner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.section_middlecon_inner a {
+  text-align: center;
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_middlecon_inner a:not(:last-child) {
+  margin-right: 20px;
+}
+
+.section_middlecon_inner a b {
+  display: block;
+  font-family: "Hana2-Bold", sans-serif;
+}
+
+.section_middlecon_inner span {
+  font-size: 16px;
+}
+
+.section_middlecon_inner a:not(:last-child)::after {
+  content: "";
+  width: 1px;
+  height: 85px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #dae1e3;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101; /* pagination보다 위에서 버튼이 눌릴 수 있도록 설정 */
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  color: #a8a8a8;
+}
+
+.swiper-button-prev {
+  left: 500px;
+  top: 530px;
+}
+
+.swiper-button-next {
+  right: 500px;
+  top: 530px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #575757;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #a8a8a8;
+}
+
+/* 추가 스타일: 버튼에 아이콘(예: 화살표)을 넣을 경우 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px; /* 아이콘 크기 */
+  color: #333; /* 아이콘 색상 */
+}
+
+/* 비활성화 된 버튼 스타일 (옵션) */
+.swiper-button-disabled {
+  opacity: 0.3; /* 비활성화 시 투명도 */
+  cursor: default; /* 기본 마우스 포인터 */
+}
+.swiper-slide {
+  background-color: var(--swiper-slide-bg-color, #fff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* 슬라이드의 높이를 명시적으로 정의 */
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.text-in-slide,
+.img-in-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  flex: 1; /* 높이를 각각 50%로 설정 */
+  width: 100%; /* 너비는 100% */
+}
+
+.text-in-slide {
+  color: #fff; /* 텍스트 색상 흰색으로 설정 */
+  text-align: center;
+  padding: 10px;
+}
+
+.text-in-slide span, /* 태그 */
+.text-in-slide h2, /* 제목 */
+.text-in-slide p {
+  /* 설명 */
+  margin-bottom: 5px; /* 각 요소의 하단 여백 */
+}
+
+.img-in-slide img {
+  width: auto;
+  height: 130px;
+  max-width: 200px;
+  min-width: 150px;
+  margin: 5px 0; /* 상하 여백 추가 */
+}
