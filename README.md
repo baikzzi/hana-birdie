@@ -28,7 +28,7 @@
 
 
 ### 2-3. 시스템 아키텍처
-![시스템 아키텍처](https://github.com/user-attachments/assets/a0966b55-4b10-4de8-991c-5efc124eb92f)
+![시스템 아키텍처](https://github.com/user-attachments/assets/0e09d397-234a-4f64-aa0e-4967b326e2ad)
 
 
 
