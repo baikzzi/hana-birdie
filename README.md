@@ -20,7 +20,7 @@
 # 2. 프로젝트 응용 기술
 
 ### 2-1. 현금흐름 예측모델
-![현금흐름 예측모델](https://github.com/user-attachments/assets/2b200a00-8275-478f-9d79-134f7316096a)
+![현금흐름 예측모델](https://github.com/user-attachments/assets/8437ed27-cbc5-49bc-82ed-64dc2cd78a8e)
 
 ### 2-2. 예약 시스템 - 동시성 문제
 ![예약시스템 동시성 문제 1](https://github.com/user-attachments/assets/a13d36e1-d543-48d7-9a2e-62c823e37843)
