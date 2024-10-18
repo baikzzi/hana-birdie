@@ -5,10 +5,10 @@
 # 1. 프로젝트 개요
 
 ### 1-1. 프로젝트 기획 배경
-![프로젝트 기획배경](https://github.com/user-attachments/assets/bfbd27e3-168a-493e-9629-c1824a353ae2)
+![프로젝트 기획배경](https://github.com/user-attachments/assets/23a6dfb4-67fe-46eb-939e-ab548f9fe6ea)
 
 ### 1-2. 프로젝트 기대효과
-![프로젝트 기대효과](https://github.com/user-attachments/assets/0ac8deed-0147-4899-80f6-66aa49bdfaea)
+![프로젝트 기대효과](https://github.com/user-attachments/assets/6fb2d388-9c2b-4bc2-96b8-27b8d9afc952)
 
 
 ### 1-3. 서비스 개요
@@ -22,17 +22,20 @@
 ### 2-1. 현금흐름 예측모델
 ![현금흐름 예측모델](https://github.com/user-attachments/assets/2b200a00-8275-478f-9d79-134f7316096a)
 
-### 2-2. 적용기술
+### 2-2. 예약 시스템 - 동시성 문제
+![예약시스템 동시성 문제 1](https://github.com/user-attachments/assets/a13d36e1-d543-48d7-9a2e-62c823e37843)
+![예약시스템 동시성 문제 2](https://github.com/user-attachments/assets/a417dfe5-3d8a-4666-9539-7db1330e71cc)
 
 
 ### 2-3. 시스템 아키텍처
-![시스템아키텍처](https://github.com/user-attachments/assets/7dc24528-3258-4498-8cb5-35e8d86eff10)
+![시스템 아키텍처](https://github.com/user-attachments/assets/a0966b55-4b10-4de8-991c-5efc124eb92f)
 
 
 
 # 3. 프로젝트 결과
 
 ### 3-1. 시나리오
+![시나리오](https://github.com/user-attachments/assets/ccea4384-e8c1-48bf-995f-719decf38134)
 
 ### 3-2. 발표 ppt
 
