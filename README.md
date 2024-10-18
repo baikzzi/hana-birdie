@@ -12,9 +12,9 @@
 
 
 ### 1-3. 서비스 개요
-![서비스 개요 1](https://github.com/user-attachments/assets/ee248559-ef7a-423c-b8c3-ab2158cdbd2b)
+![서비스 개요 1](https://github.com/user-attachments/assets/eb301ed0-bd48-46a0-8ccb-d413df547f67)
 
-![서비스 개요 2](https://github.com/user-attachments/assets/a77d8f8a-4f20-4455-a89e-7e2ce4c3718d)
+![서비스 개요 2](https://github.com/user-attachments/assets/2122e4ee-bb7c-44c9-85c0-3221f7da212e)
 
 
 # 2. 프로젝트 응용 기술
