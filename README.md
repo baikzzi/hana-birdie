@@ -12,7 +12,7 @@
 
 
 ### 1-3. 서비스 개요
-![서비스 개요 1](https://github.com/user-attachments/assets/eb301ed0-bd48-46a0-8ccb-d413df547f67)
+![서비스 개요 1](https://github.com/user-attachments/assets/9e599025-ddbe-4826-b925-df2106cd4a8f)
 
 ![서비스 개요 2](https://github.com/user-attachments/assets/2122e4ee-bb7c-44c9-85c0-3221f7da212e)
 
